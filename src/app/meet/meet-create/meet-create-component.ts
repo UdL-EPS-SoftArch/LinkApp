@@ -22,6 +22,8 @@ export class MeetCreateComponent implements OnInit {
   }
 
   onSubmit(): void {
+    this.meet.initialMeetDate = new Date(this.meet.initialMeetDate);
+    this.meet.finalMeetDate = new Date(this.meet.finalMeetDate);
     this.meetService.createResource({ body: this.meet }).subscribe(
       () => {
         console.log('HELLOOO');

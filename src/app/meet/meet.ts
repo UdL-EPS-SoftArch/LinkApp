@@ -7,10 +7,10 @@ export class Meet extends Resource {
   title: string;
   status: boolean;
   description: string;
-  creationDate: string;
-  lastUpdate: string;
-  initialMeetDate: string;
-  finalMeetDate: string;
+  creationDate: Date;
+  lastUpdate: Date;
+  initialMeetDate: Date;
+  finalMeetDate: Date;
   maxUsers: bigint;
   location: string;
 
