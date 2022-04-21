@@ -8,9 +8,11 @@ import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { UserDeleteComponent } from './user/user-delete/user-delete.component';
-import {MeetCreateComponent} from './meet/meet-create/meet-create-component';
+import { MeetCreateComponent } from './meet/meet-create/meet-create-component';
+import { MeetListComponent } from './meet/meet-list/meet-list.component';
 
 const routes: Routes = [
+  { path: 'meets', component: MeetListComponent},
   { path: 'meets/create', component: MeetCreateComponent},
   { path: 'users/create', component: UserRegisterComponent},
   { path: 'users/:id/delete', component: UserDeleteComponent, canActivate: [LoggedInGuard]},

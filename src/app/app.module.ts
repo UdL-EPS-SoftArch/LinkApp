@@ -23,7 +23,9 @@ import {HttpErrorInterceptor} from './error-handler/http-error-interceptor';
 import {AuthenticationBasicService} from './login-basic/authentication-basic.service';
 import {LoggedInGuard} from './login-basic/loggedin.guard';
 import {UserService} from './user/user.service';
-import {MeetCreateComponent} from "./meet/meet-create/meet-create-component";
+import {MeetCreateComponent} from './meet/meet-create/meet-create-component';
+import {MeetListComponent} from './meet/meet-list/meet-list.component';
+import { MeetHeaderComponent } from './meet/meet-list/meet-header/meet-header.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import {MeetCreateComponent} from "./meet/meet-create/meet-create-component";
     MeetCreateComponent,
     UserEditComponent,
     UserDeleteComponent,
-    UserSearchComponent
+    UserSearchComponent,
+    MeetListComponent,
+    MeetHeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -54,8 +58,8 @@ import {MeetCreateComponent} from "./meet/meet-create/meet-create-component";
     ReactiveFormsModule,
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true},
     AuthenticationBasicService, LoggedInGuard, UserService
   ],
   bootstrap: [AppComponent]
