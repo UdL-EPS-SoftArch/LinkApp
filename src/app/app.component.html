@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 
-<main role="main" [ngClass]="{'container': false, 'mt-5': false}" id="main-cont">
+<main role="main" [ngClass]="{'container': includeContainer(), 'mt-5': includeContainer()}">
   <app-error-alert></app-error-alert>
   <router-outlet></router-outlet>
 </main>
