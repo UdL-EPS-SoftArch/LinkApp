@@ -1,33 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationBasicService } from '../../login-basic/authentication-basic.service';
-import { UserService } from '../../user/user.service';
-import { User } from '../../login-basic/user';
 import { Location } from '@angular/common';
+import {Meet} from '../meet';
+import {MeetService} from '../meet.service';
 
 @Component({
   selector: 'app-user-register',
   templateUrl: './meet-create-component.html'
 })
 export class MeetCreateComponent implements OnInit {
-  public user: User;
+  public meet: Meet;
 
   constructor(private router: Router,
               private location: Location,
-              private userService: UserService,
-              private authenticationBasicService: AuthenticationBasicService) {
+              private meetService: MeetService) {
   }
 
   ngOnInit(): void {
-    this.user = new User();
+    this.meet = new Meet();
   }
 
   onSubmit(): void {
-    this.user.username = this.user.id;
-    this.userService.createResource({ body: this.user }).subscribe(
+    this.meetService.createResource({ body: this.meet }).subscribe(
       () => {
-        this.authenticationBasicService.login(this.user.id, this.user.password).subscribe(
-          (user: User) => this.router.navigate(['users', user.id]));
+        console.log('HELLOOO');
+        console.log(this.meet);
       });
   }
 
