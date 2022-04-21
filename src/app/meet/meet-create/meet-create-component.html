@@ -17,8 +17,9 @@
 
     <div class="form-group mb-3" [class.was-validated]="description.dirty || description.touched">
       <label class="control-label" for="description">Description*</label>
-      <input id="description" name="description" type="text" class="form-control" required description
+      <textarea id="description" name="description" type="text" class="form-control" required description
              [(ngModel)]="meet.description" #description="ngModel">
+      </textarea>
       <div class="invalid-feedback">A description is required</div>
     </div>
 
