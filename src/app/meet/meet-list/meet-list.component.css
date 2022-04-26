@@ -1,0 +1,18 @@
+.lato-black {
+  font-family: 'Lato Black', sans-serif;
+  font-weight: bold;
+}
+
+.lato-light {
+  font-family: "Lato Light", sans-serif;
+  font-weight: lighter;
+}
+
+.col-info{
+  background-color:white;
+  border-radius: 1rem;
+}
+
+.bg-gray {
+  background-color: rgb(246 247 248);
+}
