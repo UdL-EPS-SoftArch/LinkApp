@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {Group} from '../../Group';
 import {GroupService} from '../group.service';
 import {GROUPS} from '../../mock-groups';
-import {group} from "@angular/animations";
 
 @Component({
   selector: 'app-group-list',
@@ -16,7 +15,7 @@ export class GroupListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.groups = this.groupService.getGroups();
+   this.groupService.getGroups().subscribe((groups) => this.groups = groups);
   }
 
 }
