@@ -11,6 +11,8 @@ export class GroupListComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log('Perdó');
+  }
 
 }
