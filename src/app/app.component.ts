@@ -17,7 +17,7 @@ export class AppComponent {
   constructor(private router: Router) {
     this.router = router;
     this.routesWithoutContainer = [
-      '/meets'
+      '/meets/.*'
     ];
   }
 
@@ -25,6 +25,12 @@ export class AppComponent {
    * @returns False if the current URL is contained in 'routesWithoutContainer' list
    */
   public includeContainer(): boolean {
-    return !this.routesWithoutContainer.includes(this.router.url);
+    for (const route of this.routesWithoutContainer) {
+      const regexp = new RegExp(route);
+      if (regexp.test(this.router.url)) {
+        return false;
+      }
+    }
+    return true;
   }
 }

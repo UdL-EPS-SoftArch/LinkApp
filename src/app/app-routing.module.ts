@@ -13,7 +13,7 @@ import { MeetListComponent } from './meet/meet-list/meet-list.component';
 
 const routes: Routes = [
   { path: 'groups/:id/createMeet', component: MeetCreateComponent},
-  { path: 'meets', component: MeetListComponent},
+  { path: 'meets/:id', component: MeetListComponent},
   { path: 'users/create', component: UserRegisterComponent},
   { path: 'users/:id/delete', component: UserDeleteComponent, canActivate: [LoggedInGuard]},
   { path: 'users/:id/edit', component: UserEditComponent, canActivate: [LoggedInGuard]},

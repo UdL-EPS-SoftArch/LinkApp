@@ -29,9 +29,8 @@ export class MeetCreateComponent implements OnInit {
     this.meet.finalMeetDate = new Date(this.meet.finalMeetDate);
     this.meet.group = '/groups/' + this.groupId; // THIS IS A TEMPORAL FIX WHILE OTHER GROUPS DEVELOP THE GROUP CLASS. TODO CHANGE ME
     this.meetService.createResource({ body: this.meet }).subscribe(
-      () => {
-        console.log('HELLOOO');
-        console.log(this.meet);
+      meet => {
+        this.router.navigate(['meets', meet.id]);
       });
   }
 
