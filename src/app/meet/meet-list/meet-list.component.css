@@ -8,6 +8,10 @@
   font-weight: lighter;
 }
 
+.col-info{
+  background-color:white;
+  border-radius: 1rem;
+}
 
 .bg-gray {
   background-color: rgb(246 247 248);
