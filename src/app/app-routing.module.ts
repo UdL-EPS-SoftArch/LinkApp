@@ -11,7 +11,7 @@ import { UserDeleteComponent } from './user/user-delete/user-delete.component';
 import {MeetCreateComponent} from './meet/meet-create/meet-create-component';
 
 const routes: Routes = [
-  { path: 'meets/create', component: MeetCreateComponent},
+  { path: 'groups/:id/createMeet', component: MeetCreateComponent},
   { path: 'users/create', component: UserRegisterComponent},
   { path: 'users/:id/delete', component: UserDeleteComponent, canActivate: [LoggedInGuard]},
   { path: 'users/:id/edit', component: UserEditComponent, canActivate: [LoggedInGuard]},

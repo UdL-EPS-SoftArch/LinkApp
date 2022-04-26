@@ -11,7 +11,7 @@
         <a class="nav-link" [routerLink]="['/about']">About</a>
       </li>
       <li class="nav-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
-        <a class="nav-link" [routerLink]="['/meets/create']">Create Meet</a>
+        <a class="nav-link" [routerLink]="['/groups/1/createMeet']">Create Meet</a>
       </li>
 
       <li class="nav-item" *ngIf="isRole('user')" ngbDropdown>
