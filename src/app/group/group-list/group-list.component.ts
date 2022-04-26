@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Group} from '../../Group';
+import {GROUPS} from '../../mock-groups';
 
 @Component({
   selector: 'app-group-list',
@@ -7,12 +8,12 @@ import {Group} from '../../Group';
   styleUrls: ['./group-list.component.css']
 })
 export class GroupListComponent implements OnInit {
-  groups: Group[];
+  groups: Group[] = GROUPS;
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log('Perdó');
+    console.log(this.groups);
   }
 
 }
