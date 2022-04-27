@@ -15,7 +15,7 @@ export class GroupListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-   this.groupService.getGroups().subscribe((groups) => this.groups = groups);
+   this.groupService.getPage().subscribe((groups) => this.groups = groups.resources);
   }
 
 }

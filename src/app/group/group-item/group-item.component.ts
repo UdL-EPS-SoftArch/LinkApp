@@ -12,7 +12,6 @@ export class GroupItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log('Perdó');
   }
 
 }
