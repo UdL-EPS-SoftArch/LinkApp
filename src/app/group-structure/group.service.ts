@@ -17,5 +17,5 @@ export class GroupService extends HateoasResourceOperation<Group> {
     group.description = 'setrdtfgyhukj';
     return group;
   }
-
+  
 }
