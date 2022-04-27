@@ -2,23 +2,18 @@
 
 <div class="jumbotron">
   <p>Groups you belong to:</p>
-  <ul>
-    <li>Group 1</li>
-    <li>Group 2</li>
-  </ul>
 </div>
-
 
 <div class="card mb-1" *ngFor="let group of groups">
   <div class="card-block row m-1 col-12">
     <div class="card-body row align-items-center">
       <div class="col-6 mt-1">
         <h6 class="card-subtitle text-muted">Title</h6>
-        <a class="card-text" [routerLink]="['/groups', group.id]">{{group.id}}</a>
+        <a class="card-text" [routerLink]="['/groups', group.id]">{{group.title}}</a>
       </div>
       <div class="col-6 mt-1">
-        <h6 class="card-subtitle text-muted">Title</h6>
-        <p class="card-text">{{group.title}}</p>
+        <h6 class="card-subtitle text-muted">Description</h6>
+        <p class="card-text">{{group.description}}</p>
       </div>
     </div>
   </div>

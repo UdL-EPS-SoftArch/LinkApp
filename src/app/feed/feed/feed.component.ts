@@ -39,8 +39,8 @@ export class FeedComponent implements OnInit {
       (page: PagedResourceCollection<Group>) => this.groups = page.resources);
   }
 
-  detail(Group: Group): void {
-    this.router.navigate(['groups', Group.id]);
+  detail(group: Group): void {
+    this.router.navigate(['groups', group.id]);
   }
 
 
