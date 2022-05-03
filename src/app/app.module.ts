@@ -25,6 +25,7 @@ import {LoggedInGuard} from './login-basic/loggedin.guard';
 import {UserService} from './user/user.service';
 import { GroupListComponent } from './group/group-list/group-list.component';
 import { GroupItemComponent } from './group/group-item/group-item.component';
+import { GroupSearchComponent } from './group/group-search/group-search.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { GroupItemComponent } from './group/group-item/group-item.component';
     UserDeleteComponent,
     UserSearchComponent,
     GroupListComponent,
-    GroupItemComponent
+    GroupItemComponent,
+    GroupSearchComponent
   ],
   imports: [
     BrowserModule,
