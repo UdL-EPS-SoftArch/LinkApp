@@ -1,0 +1,65 @@
+<app-meet-header [meet]="meet"></app-meet-header>
+<div class="bg-gray">
+  <div class="container">
+    <div class="row py-2">
+      <div class="col-md-7">
+        <div class="py-5">
+          <img src="https://secure-content.meetupstatic.com/images/classic-events/488929104/676x380.webp"
+               class="img-fluid"
+               alt="Main meetup image">
+        </div>
+        <h4 class="lato-black">Details</h4>
+        <p class="text-start" *ngFor="let paragraph of meet?.description.split('\n')">
+          {{ paragraph }}
+        </p>
+      </div>
+      <div class="col-md-1"></div>
+      <div class="col-md-4 order-first order-md-last">
+        <div class="sticky-md-top pt-5">
+          <div class="p-4 col-info">
+            <div class="row row-cols-2">
+              <div class="col-2">
+                <p class="mb-0"><i class="fas fa-user-circle fa-3x"></i></p>
+              </div>
+              <div class="col-sm-10">
+                <div class="row">
+                  <p class="lato-black mb-0">Group name</p>
+                  <p class="text-black-50 mb-0">Public group</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-4 col-info mt-4">
+            <div class="row">
+              <div class="col-2"><p><i class="fas fa-clock fa-lg"></i></p></div>
+              <div class="col-md-10">
+                <div *ngIf="sameDay">
+                  <time class="mb-1">
+                    {{ meet?.initialMeetDate | date: 'fullDate' }}
+                    <br>
+                    {{ meet?.initialMeetDate | date: 'shortTime' }} to {{ meet?.finalMeetDate | date: 'shortTime' }}
+                  </time>
+                </div>
+                <div *ngIf="!sameDay">
+                  <time class="mb-1">
+                    {{ meet?.initialMeetDate | date: 'medium' }} to
+                    <br>
+                    {{ meet?.finalMeetDate | date: 'medium' }}
+                  </time>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-2"><p><i class="fas fa-map-marker-alt fa-lg"></i></p></div>
+              <div class="col-md-10">
+                <p class="mb-1">JustDigital</p>
+                <p class="text-black-50 m-0">C/ Agustins, 7 (bajos) · Lleida</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
