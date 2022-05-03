@@ -19,7 +19,8 @@ const routes: Routes = [
   { path: 'users', component: UserListComponent, canActivate: [LoggedInGuard]},
   { path: 'about', component: AboutComponent},
   { path: '404', component: NotFoundComponent},
-  { path: 'group/:id', component: GroupStructureComponent},
+  { path: 'group/:id/meets', component: GroupStructureComponent},
+  { path: 'group/:id/posts', component: GroupStructureComponent},
   { path: 'posts', component: PostsComponent},
   { path: '', redirectTo: 'about', pathMatch: 'full'},
 
