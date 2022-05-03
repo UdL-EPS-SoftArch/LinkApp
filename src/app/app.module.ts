@@ -24,9 +24,9 @@ import {AuthenticationBasicService} from './login-basic/authentication-basic.ser
 import {LoggedInGuard} from './login-basic/loggedin.guard';
 import {UserService} from './user/user.service';
 import {MeetCreateComponent} from './meet/meet-create/meet-create-component';
-import {MeetListComponent} from './meet/meet-list/meet-list.component';
-import { MeetHeaderComponent } from './meet/meet-list/meet-header/meet-header.component';
 import { FooterComponent } from './footer/footer.component';
+import {MeetDetailComponent} from './meet/meet-detail/meet-detail.component';
+import { MeetHeaderComponent } from './meet/meet-detail/meet-header/meet-header.component';
 
 @NgModule({
   declarations: [
@@ -41,9 +41,9 @@ import { FooterComponent } from './footer/footer.component';
     UserEditComponent,
     UserDeleteComponent,
     UserSearchComponent,
-    MeetListComponent,
     MeetHeaderComponent,
-    FooterComponent
+    FooterComponent,
+    MeetDetailComponent,
   ],
   imports: [
     BrowserModule,

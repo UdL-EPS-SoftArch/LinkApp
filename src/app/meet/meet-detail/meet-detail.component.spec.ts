@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MeetListComponent } from './meet-list.component';
+import { MeetDetailComponent } from './meet-detail.component';
 
 describe('MeetListComponent', () => {
-  let component: MeetListComponent;
-  let fixture: ComponentFixture<MeetListComponent>;
+  let component: MeetDetailComponent;
+  let fixture: ComponentFixture<MeetDetailComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MeetListComponent ]
+      declarations: [ MeetDetailComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MeetListComponent);
+    fixture = TestBed.createComponent(MeetDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
