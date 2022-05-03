@@ -2,7 +2,6 @@ import {HateoasResource, Resource} from '@lagoshny/ngx-hateoas-client';
 
 @HateoasResource('meets')
 export class Meet extends Resource {
-  id: string;
   group: string;
   title: string;
   status: boolean;

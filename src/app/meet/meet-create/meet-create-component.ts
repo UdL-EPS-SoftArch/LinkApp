@@ -30,7 +30,7 @@ export class MeetCreateComponent implements OnInit {
     this.meet.group = '/groups/' + this.groupId; // THIS IS A TEMPORAL FIX WHILE OTHER GROUPS DEVELOP THE GROUP CLASS. TODO CHANGE ME
     this.meetService.createResource({ body: this.meet }).subscribe(
       meet => {
-        this.router.navigate(['meets', meet.id]);
+        this.router.navigate([meet.uri]);
       });
   }
 

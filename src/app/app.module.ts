@@ -26,6 +26,7 @@ import {UserService} from './user/user.service';
 import {MeetCreateComponent} from './meet/meet-create/meet-create-component';
 import {MeetListComponent} from './meet/meet-list/meet-list.component';
 import { MeetHeaderComponent } from './meet/meet-list/meet-header/meet-header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { MeetHeaderComponent } from './meet/meet-list/meet-header/meet-header.co
     UserDeleteComponent,
     UserSearchComponent,
     MeetListComponent,
-    MeetHeaderComponent
+    MeetHeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
