@@ -24,7 +24,7 @@ import {AuthenticationBasicService} from './login-basic/authentication-basic.ser
 import {LoggedInGuard} from './login-basic/loggedin.guard';
 import {UserService} from './user/user.service';
 import { ChatListComponent } from './chat/chat-list/chat-list.component';
-import { MessageDisplayComponent } from './chat/message-display/message-display.component';
+import { MessageDetailComponent } from './chat/message-detail/message-detail.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +39,7 @@ import { MessageDisplayComponent } from './chat/message-display/message-display.
     UserDeleteComponent,
     UserSearchComponent,
     ChatListComponent,
-    MessageDisplayComponent
+    MessageDetailComponent
   ],
   imports: [
     BrowserModule,
