@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Meet} from '../../meet';
 
 @Component({
   selector: 'app-meet-header',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MeetHeaderComponent implements OnInit {
 
+  @Input() meet: Meet;
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
 
 }

@@ -24,8 +24,8 @@ import {AuthenticationBasicService} from './login-basic/authentication-basic.ser
 import {LoggedInGuard} from './login-basic/loggedin.guard';
 import {UserService} from './user/user.service';
 import {MeetCreateComponent} from './meet/meet-create/meet-create-component';
-import {MeetListComponent} from './meet/meet-list/meet-list.component';
-import { MeetHeaderComponent } from './meet/meet-list/meet-header/meet-header.component';
+import {MeetDetailComponent} from './meet/meet-detail/meet-detail.component';
+import { MeetHeaderComponent } from './meet/meet-detail/meet-header/meet-header.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +40,7 @@ import { MeetHeaderComponent } from './meet/meet-list/meet-header/meet-header.co
     UserEditComponent,
     UserDeleteComponent,
     UserSearchComponent,
-    MeetListComponent,
+    MeetDetailComponent,
     MeetHeaderComponent
   ],
   imports: [
