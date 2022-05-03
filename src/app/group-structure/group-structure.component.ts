@@ -22,7 +22,7 @@ export class GroupStructureComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.groupService.getResource('1').subscribe(
+    this.groupService.getResource(id).subscribe(
       group => {
         this.group = group;
       });
