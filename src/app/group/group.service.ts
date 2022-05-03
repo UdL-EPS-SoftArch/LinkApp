@@ -3,7 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable, of} from 'rxjs';
 import {Group} from './Group';
 import {GROUPS} from '../mock-groups';
-import {HateoasResourceOperation} from '@lagoshny/ngx-hateoas-client';
+import {HateoasResourceOperation, ResourceCollection} from '@lagoshny/ngx-hateoas-client';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +15,8 @@ export class GroupService extends HateoasResourceOperation<Group> {
     super(Group);
   }
 
-  /* getGroups(): Observable<Group[]> {
-    //return this.http.get<Group[]>(this.apiUrl);
+  public findByTitleContaining(query: string): Observable<ResourceCollection<Group>> {
+    return this.searchCollection('findByTitleContaining', { params: { title: query } });
+  }
 
-  } */
 }
