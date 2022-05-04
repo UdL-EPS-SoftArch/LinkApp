@@ -24,6 +24,7 @@ import {AuthenticationBasicService} from './login-basic/authentication-basic.ser
 import {LoggedInGuard} from './login-basic/loggedin.guard';
 import {UserService} from './user/user.service';
 import { FeedComponent } from './feed/feed/feed.component';
+import {MeetCreateComponent} from './meet/meet-create/meet-create-component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { FeedComponent } from './feed/feed/feed.component';
     UserListComponent,
     UserDetailComponent,
     UserRegisterComponent,
+    MeetCreateComponent,
     UserEditComponent,
     UserDeleteComponent,
     UserSearchComponent,

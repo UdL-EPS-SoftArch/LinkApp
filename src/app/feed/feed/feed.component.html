@@ -18,7 +18,34 @@
           <div _ngcontent-qao-c4="" class="info_box has-animation">
             <span _ngcontent-qao-c4=""></span>
             <span _ngcontent-qao-c4=""></span>
-            <div _ngcontent-qao-c4="" class="icon"><img _ngcontent-qao-c4="" class="small" src="assets/icon.jpeg" alt="Join a group"></div>
+            <div _ngcontent-qao-c4="" class="icon"><img _ngcontent-qao-c4="" class="small" src="assets/icon.jpeg" alt="Event"></div>
+            <h5 _ngcontent-qao-c4="">{{group.title}}</h5><p _ngcontent-qao-c4="" class="mb-0">{{group.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<br>
+
+<div class="jumbotron">
+  <h5>Your groups</h5>
+</div>
+
+<br>
+
+<div _ngcontent-qao-c4="" class="section-padding">
+  <div _ngcontent-qao-c4="" class="container">
+    <div _ngcontent-qao-c4="" class="row">
+      <!---->
+      <div *ngFor="let group of groups">
+        <div _ngcontent-qao-c4="" class="col-lg-4 col-md-6 ng-star-inserted">
+          <div _ngcontent-qao-c4="" class="info_box has-animation">
+            <span _ngcontent-qao-c4=""></span>
+            <span _ngcontent-qao-c4=""></span>
+            <div _ngcontent-qao-c4="" class="icon"><img _ngcontent-qao-c4="" class="small" src="assets/icon.jpeg" alt="Group"></div>
             <h5 _ngcontent-qao-c4="">{{group.title}}</h5><p _ngcontent-qao-c4="" class="mb-0">{{group.description}}</p>
           </div>
         </div>

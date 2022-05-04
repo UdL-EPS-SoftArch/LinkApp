@@ -5,7 +5,7 @@ import { User } from '../../login-basic/user';
 import { Location } from '@angular/common';
 import { Group } from 'src/app/group-structure/group';
 import { PagedResourceCollection } from '@lagoshny/ngx-hateoas-client';
-import { GroupService } from 'src/app/group-structure/group.service'
+import { GroupService } from 'src/app/group-structure/group.service';
 
 @Component({
   selector: 'app-feed',
@@ -14,7 +14,7 @@ import { GroupService } from 'src/app/group-structure/group.service'
 })
 export class FeedComponent implements OnInit {
   public user: User;
-  public groups: Group[] = []
+  public groups: Group[] = [];
   public pageSize = 5;
   public page = 1;
   public totalGroups = 0;
