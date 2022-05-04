@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Group} from '../Group';
 import {GroupService} from '../group.service';
 import {GROUPS} from '../../mock-groups';
+import {User} from "../../login-basic/user";
 
 @Component({
   selector: 'app-group-list',
@@ -16,6 +17,10 @@ export class GroupListComponent implements OnInit {
 
   ngOnInit(): void {
    this.groupService.getPage().subscribe((groups) => this.groups = groups.resources);
+  }
+
+  detail(group: Group): void {
+    console.log('Hola');
   }
 
 }
