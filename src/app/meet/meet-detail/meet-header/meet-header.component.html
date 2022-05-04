@@ -1,0 +1,21 @@
+<div class="border-bottom border-2">
+  <div class="container mt-3">
+    <div class="row">
+      <time class="text-black-50 mb-1">{{ meet?.initialMeetDate | date:'fullDate' }}</time>
+      <h1 class="lato-black mb-2">{{ meet?.title }}</h1>
+    </div>
+    <div class="row mt-2">
+      <div class="col-sm-4">
+        <div class="row row-cols-2">
+          <div class="col-2">
+            <p><i class="fas fa-user-circle fa-3x"></i></p>
+          </div>
+          <div class="col-sm-5">
+            <p class="mb-1">Hosted by</p>
+            <p class="lato-black">Name</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

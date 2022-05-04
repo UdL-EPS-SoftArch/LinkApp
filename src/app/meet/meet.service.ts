@@ -9,10 +9,4 @@ export class MeetService extends HateoasResourceOperation<Meet> {
   constructor() {
     super(Meet);
   }
-
-  /*
-  public findByUsernameContaining(query: string): Observable<ResourceCollection<Meet>> {
-    return this.searchCollection('findByUsernameContaining', { params: { text: query } });
-  }
-   */
 }

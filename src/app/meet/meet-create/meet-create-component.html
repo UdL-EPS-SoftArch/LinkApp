@@ -1,13 +1,5 @@
 <form id="user-form" (ngSubmit)="onSubmit()" #form="ngForm">
   <fieldset>
-
-    <div class="form-title mb-3" [class.was-validated]="group.dirty || group.touched">
-      <label class="control-label" for="group">Group*</label>
-      <input id="group" group="group" type="text" class="form-control" required
-             [(ngModel)]="meet.group" #group="ngModel">
-      <div class="invalid-feedback">A group is required</div>
-    </div>
-
     <div class="form-group mb-3" [class.was-validated]="name.dirty || name.touched">
       <label class="control-label" for="name">Title*</label>
       <input id="name" name="name" type="text" class="form-control" required
