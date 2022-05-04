@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light added-pad"> 
+<nav class="navbar navbar-expand-lg navbar-light bg-light added-pad">
   <a class="navbar-brand ms-3 logo-image" [routerLink]="['/about']"><img src="assets/logo2.png" class="img-fluid"></a>
   <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
           [attr.aria-expanded]="!isCollapsed" aria-controls="navbarContent" aria-label="Toggle navigation">
@@ -13,6 +13,7 @@
       <li class="nav-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
         <a class="nav-link" [routerLink]="['/feed']">Feed</a>
       </li>
+        <a class="nav-link" [routerLink]="['/meets/create']">Create Meet</a>
       <li class="nav-item" *ngIf="isRole('user')" ngbDropdown>
         <a class="nav-link dropdown-toggle" id="playerDropdown" role="button"
            aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>Users</a>

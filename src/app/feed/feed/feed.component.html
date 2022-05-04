@@ -1,8 +1,78 @@
-<h2><b>Feed</b></h2>
+<div _ngcontent-wjd-c3="">
+  <h2 _ngcontent-wjd-c3="">Welcome back, {{user.name}}!👋</h2>
+</div>
+<br><br>
 
 <div class="jumbotron">
-  <p>Groups you belong to:</p>
+  <h5>Events from your groups</h5>
 </div>
+
+<br>
+
+<div _ngcontent-qao-c4="" class="section-padding">
+  <div _ngcontent-qao-c4="" class="container">
+    <div _ngcontent-qao-c4="" class="row">
+      <!---->
+      <div *ngFor="let meet of meets">
+        <div _ngcontent-qao-c4="" class="col-lg-4 col-md-6 ng-star-inserted">
+          <div _ngcontent-qao-c4="" class="info_box has-animation">
+            <span _ngcontent-qao-c4=""></span>
+            <span _ngcontent-qao-c4=""></span>
+            <div _ngcontent-qao-c4="" class="icon"><img _ngcontent-qao-c4="" class="small" src="assets/icon.jpeg" alt="Event"></div>
+            <h5 _ngcontent-qao-c4="">{{meet.title}}</h5><p _ngcontent-qao-c4="" class="mb-0">{{meet.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<br>
+
+<div class="jumbotron">
+  <h5>Your groups</h5>
+</div>
+
+<br>
+
+<div _ngcontent-qao-c4="" class="section-padding">
+  <div _ngcontent-qao-c4="" class="container">
+    <div *ngFor="let group of groups">
+    <div _ngcontent-qao-c4="" class="row">
+      <!---->
+      <!--<div *ngFor="let group of groups">-->
+        <div _ngcontent-qao-c4="" class="col-lg-4 col-md-6 ng-star-inserted">
+          <div _ngcontent-qao-c4="" class="info_box has-animation">
+            <span _ngcontent-qao-c4=""></span>
+            <span _ngcontent-qao-c4=""></span>
+            <div _ngcontent-qao-c4="" class="icon"><img _ngcontent-qao-c4="" class="small" src="assets/icon.jpeg" alt="Group"></div>
+            <h5 _ngcontent-qao-c4="">{{group.title}}</h5><p _ngcontent-qao-c4="" class="mb-0">{{group.description}}</p>
+          </div>
+        </div>
+        <div _ngcontent-qao-c4="" class="col-lg-4 col-md-6 ng-star-inserted">
+          <div _ngcontent-qao-c4="" class="info_box has-animation">
+            <span _ngcontent-qao-c4=""></span>
+            <span _ngcontent-qao-c4=""></span>
+            <div _ngcontent-qao-c4="" class="icon"><img _ngcontent-qao-c4="" class="small" src="assets/icon.jpeg" alt="Group"></div>
+            <h5 _ngcontent-qao-c4="">{{group.title}}</h5><p _ngcontent-qao-c4="" class="mb-0">{{group.description}}</p>
+          </div>
+        </div>
+        <div _ngcontent-qao-c4="" class="col-lg-4 col-md-6 ng-star-inserted">
+          <div _ngcontent-qao-c4="" class="info_box has-animation">
+            <span _ngcontent-qao-c4=""></span>
+            <span _ngcontent-qao-c4=""></span>
+            <div _ngcontent-qao-c4="" class="icon"><img _ngcontent-qao-c4="" class="small" src="assets/icon.jpeg" alt="Group"></div>
+            <h5 _ngcontent-qao-c4="">{{group.title}}</h5><p _ngcontent-qao-c4="" class="mb-0">{{group.description}}</p>
+          </div>
+        </div>
+      </div> <br>
+    </div>
+  </div>
+</div>
+
+<br>
+<br>
 
 <div class="card mb-1" *ngFor="let group of groups">
   <div class="card-block row m-1 col-12">
@@ -19,9 +89,11 @@
   </div>
 </div>
 
+<br>
+
 <ngb-pagination class="d-flex justify-content-center"
                 [(page)]="page" [pageSize]="pageSize" [collectionSize]="totalGroups"
-                (pageChange)="changePage()"></ngb-pagination>
+                (pageChange)="changeGroupPage()"></ngb-pagination>
 
 <!--Footer-->
 <footer class="modal-footer">
