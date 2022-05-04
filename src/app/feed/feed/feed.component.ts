@@ -18,6 +18,7 @@ export class FeedComponent implements OnInit {
   public pageSize = 5;
   public page = 1;
   public totalGroups = 0;
+  public date = null;
 
   constructor(private router: Router,
               private location: Location,
@@ -26,6 +27,7 @@ export class FeedComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = new User();
+    this.date = Date();
     this.groupService.getPage({ pageParams:  { size: this.pageSize }, sort: { title: 'ASC' } }).subscribe(
       (page: PagedResourceCollection<Group>) => {
         this.groups = page.resources;
