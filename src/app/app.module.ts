@@ -24,6 +24,8 @@ import {AuthenticationBasicService} from './login-basic/authentication-basic.ser
 import {LoggedInGuard} from './login-basic/loggedin.guard';
 import {UserService} from './user/user.service';
 import { FeedComponent } from './feed/feed/feed.component';
+import { MessageListComponent } from './chat/message-list/message-list.component';
+import { MessageDetailComponent } from './chat/message-detail/message-detail.component';
 import {MeetCreateComponent} from './meet/meet-create/meet-create-component';
 import { FooterComponent } from './footer/footer.component';
 import {MeetDetailComponent} from './meet/meet-detail/meet-detail.component';
@@ -44,6 +46,9 @@ import { GroupSearchComponent } from './group/group-search/group-search.componen
     MeetCreateComponent,
     UserEditComponent,
     UserDeleteComponent,
+    UserSearchComponent,
+    MessageListComponent,
+    MessageDetailComponent
     UserSearchComponent,
     FeedComponent,
     MeetHeaderComponent,
