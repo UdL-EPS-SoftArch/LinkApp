@@ -4,7 +4,7 @@ import { HateoasResourceOperation, ResourceCollection } from '@lagoshny/ngx-hate
 import { Message } from './message';
 
 @Injectable({providedIn: 'root'})
-export class ChatService extends HateoasResourceOperation<Message> {
+export class MessageService extends HateoasResourceOperation<Message> {
 
   constructor() {
     super(Message);

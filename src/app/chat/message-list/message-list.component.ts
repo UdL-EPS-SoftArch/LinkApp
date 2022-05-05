@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ChatService } from '../chat.service';
+import { MessageService } from '../message.service';
 import { Message } from '../message';
 import { PagedResourceCollection } from '@lagoshny/ngx-hateoas-client';
 
@@ -18,7 +18,7 @@ export class MessageListComponent implements OnInit {
 
   constructor(
     public router: Router,
-    private messageService: ChatService) {
+    private messageService: MessageService) {
   }
 
   ngOnInit(): void {
