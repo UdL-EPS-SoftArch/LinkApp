@@ -23,6 +23,7 @@ import {HttpErrorInterceptor} from './error-handler/http-error-interceptor';
 import {AuthenticationBasicService} from './login-basic/authentication-basic.service';
 import {LoggedInGuard} from './login-basic/loggedin.guard';
 import {UserService} from './user/user.service';
+import { FeedComponent } from './feed/feed/feed.component';
 import {MeetCreateComponent} from './meet/meet-create/meet-create-component';
 import { FooterComponent } from './footer/footer.component';
 import {MeetDetailComponent} from './meet/meet-detail/meet-detail.component';
@@ -41,6 +42,7 @@ import { MeetHeaderComponent } from './meet/meet-detail/meet-header/meet-header.
     UserEditComponent,
     UserDeleteComponent,
     UserSearchComponent,
+    FeedComponent,
     MeetHeaderComponent,
     FooterComponent,
     MeetDetailComponent,

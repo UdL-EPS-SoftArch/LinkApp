@@ -5,3 +5,8 @@
   background: #007bff;
   color: white;
 }
+
+.logo-image{
+  display: inline;
+  max-width: 10%;
+}

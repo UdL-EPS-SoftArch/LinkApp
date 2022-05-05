@@ -21,8 +21,15 @@ a:active {
   color: green;
 }
 
+/*
 div {
   display: block;
+}
+*/
+
+.image{
+  display: inline;
+  max-width: 50%;
 }
 
 
