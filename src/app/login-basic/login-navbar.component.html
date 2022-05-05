@@ -8,6 +8,13 @@
     <span class="fas fa-sign-out-alt"></span> Logout</a>
 </li>
 
+<form class="form-inline">
+  <div style="display: inline-flex;">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search a new group..." aria-label="Search">
+    <button class="btn btn-outline-success sep" type="submit">Search</button>
+  </div>
+</form>
+
 <li class="nav-item" *ngIf="!isLoggedIn()">
   <a class="nav-link" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }"
      [routerLink]="['/login']">
