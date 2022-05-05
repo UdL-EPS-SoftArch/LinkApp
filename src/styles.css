@@ -102,4 +102,12 @@ img.small {
   margin-bottom: 40px;
 }
 
+.top-pad {
+  padding-top: 12px;
+}
+
+.less-bottom-pad {
+  margin-bottom: 20px;
+}
+
 
