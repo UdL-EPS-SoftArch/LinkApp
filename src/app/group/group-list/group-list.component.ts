@@ -3,6 +3,7 @@ import {Group} from '../Group';
 import {GroupService} from '../group.service';
 import {GROUPS} from '../../mock-groups';
 import {User} from "../../login-basic/user";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-group-list',
@@ -12,7 +13,7 @@ import {User} from "../../login-basic/user";
 export class GroupListComponent implements OnInit {
   groups: Group[] = [];
 
-  constructor(private groupService: GroupService) {
+  constructor(public router: Router, private groupService: GroupService) {
   }
 
   ngOnInit(): void {
@@ -20,7 +21,7 @@ export class GroupListComponent implements OnInit {
   }
 
   detail(group: Group): void {
-    console.log('Hola');
+    this.router.navigate([group.uri]);
   }
 
 }
