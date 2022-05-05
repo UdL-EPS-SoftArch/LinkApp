@@ -25,6 +25,12 @@
 </div>
 
 <br>
+
+<ngb-pagination class="d-flex justify-content-center"
+                [(page)]="page" [pageSize]="pageSize" [collectionSize]="totalMeets"
+                (pageChange)="changeGroupPage()"></ngb-pagination>
+
+<br>
 <br>
 
 <div class="jumbotron">
@@ -52,11 +58,4 @@
                 [(page)]="page" [pageSize]="pageSize" [collectionSize]="totalGroups"
                 (pageChange)="changeGroupPage()"></ngb-pagination>
 
-<!--Footer-->
-<footer class="modal-footer">
-  <div class="container">
-    <div class="text-center">
-      <small>Footer...</small>
-    </div>
-  </div>
-</footer>
+
