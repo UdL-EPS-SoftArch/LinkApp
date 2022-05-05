@@ -28,6 +28,9 @@ import {MeetCreateComponent} from './meet/meet-create/meet-create-component';
 import { FooterComponent } from './footer/footer.component';
 import {MeetDetailComponent} from './meet/meet-detail/meet-detail.component';
 import { MeetHeaderComponent } from './meet/meet-detail/meet-header/meet-header.component';
+import { GroupListComponent } from './group/group-list/group-list.component';
+import { GroupItemComponent } from './group/group-item/group-item.component';
+import { GroupSearchComponent } from './group/group-search/group-search.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +49,10 @@ import { MeetHeaderComponent } from './meet/meet-detail/meet-header/meet-header.
     MeetHeaderComponent,
     FooterComponent,
     MeetDetailComponent,
+    UserSearchComponent,
+    GroupListComponent,
+    GroupItemComponent,
+    GroupSearchComponent
   ],
   imports: [
     BrowserModule,
