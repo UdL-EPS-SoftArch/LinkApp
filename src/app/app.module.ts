@@ -23,7 +23,7 @@ import {HttpErrorInterceptor} from './error-handler/http-error-interceptor';
 import {AuthenticationBasicService} from './login-basic/authentication-basic.service';
 import {LoggedInGuard} from './login-basic/loggedin.guard';
 import {UserService} from './user/user.service';
-import { ChatListComponent } from './chat/chat-list/chat-list.component';
+import { MessageListComponent } from './chat/message-list/message-list.component';
 import { MessageDetailComponent } from './chat/message-detail/message-detail.component';
 
 @NgModule({
@@ -38,7 +38,7 @@ import { MessageDetailComponent } from './chat/message-detail/message-detail.com
     UserEditComponent,
     UserDeleteComponent,
     UserSearchComponent,
-    ChatListComponent,
+    MessageListComponent,
     MessageDetailComponent
   ],
   imports: [

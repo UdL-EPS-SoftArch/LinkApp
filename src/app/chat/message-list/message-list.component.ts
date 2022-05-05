@@ -6,11 +6,11 @@ import { PagedResourceCollection } from '@lagoshny/ngx-hateoas-client';
 
 
 @Component({
-  selector: 'app-chat-list',
-  templateUrl: './chat-list.component.html',
-  styleUrls: ['./chat-list.component.css']
+  selector: 'app-message-list',
+  templateUrl: './message-list.component.html',
+  styleUrls: ['./message-list.component.css']
 })
-export class ChatListComponent implements OnInit {
+export class MessageListComponent implements OnInit {
   public messages: Message[] = [];
   public pageSize = 5;
   public page = 1;
