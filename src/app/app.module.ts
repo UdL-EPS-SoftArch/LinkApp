@@ -48,7 +48,7 @@ import { GroupSearchComponent } from './group/group-search/group-search.componen
     UserDeleteComponent,
     UserSearchComponent,
     MessageListComponent,
-    MessageDetailComponent
+    MessageDetailComponent,
     UserSearchComponent,
     FeedComponent,
     MeetHeaderComponent,
