@@ -1,14 +1,16 @@
 import { HateoasResource, Resource } from '@lagoshny/ngx-hateoas-client';
 
-@HateoasResource('groups')
-export class Group extends Resource {
+@HateoasResource('posts')
+export class Post extends Resource {
   uri: string;
-  title: string;
-  description: string;
+  text: string;
+  group: string;
+  father: string;
+  author: string;
+
 
   constructor(values: object = {}) {
     super();
     Object.assign(this as any, values);
   }
 }
-

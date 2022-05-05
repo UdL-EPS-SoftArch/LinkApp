@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UserService } from '../user.service';
 import { User } from '../../login-basic/user';
-import { AuthenticationBasicService } from '../../login-basic/authentication-basic.service';
+import {AuthenticationBasicService} from '../../login-basic/authentication-basic.service';
+
 
 @Component({
   selector: 'app-user-detail',
