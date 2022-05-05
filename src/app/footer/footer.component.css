@@ -10,3 +10,38 @@ a:hover {
 h5 {
   font-weight: 500;
 }
+
+.heart {
+  color: #eb5e28;
+  -webkit-animation: 1s infinite heathing;
+  animation: 1s infinite heathing;
+}
+
+.credits {
+  display: flex; 
+  justify-content: flex-end
+}
+
+@-webkit-keyframes heathing {
+  0%, 100%, 40%, 80% {
+      -webkit-transform: scale(.75);
+      transform:scale(.75)
+  }
+
+  20%, 60% {
+      -webkit-transform: scale(1);
+      transform:scale(1)
+  }
+}
+
+@keyframes heathing {
+  0%, 100%, 40%, 80% {
+      -webkit-transform: scale(.75);
+      transform:scale(.75)
+  }
+
+  20%, 60% {
+      -webkit-transform: scale(1);
+      transform:scale(1)
+  }
+}
