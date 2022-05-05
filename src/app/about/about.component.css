@@ -32,4 +32,27 @@ div {
   max-width: 50%;
 }
 
+.absolute {
+  position: absolute;
+}
+
+
+.yellow_image {
+  max-width: 75%;
+  left: 50%;
+  top: 5%;
+  transform: translateX(-50%);
+}
+
+.green_image {
+  top: 0;
+  right: 0;
+  left: unset;
+  transform: unset;
+}
+
+
+
+
+
 
