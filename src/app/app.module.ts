@@ -25,6 +25,10 @@ import {LoggedInGuard} from './login-basic/loggedin.guard';
 import {UserService} from './user/user.service';
 import { MessageListComponent } from './chat/message-list/message-list.component';
 import { MessageDetailComponent } from './chat/message-detail/message-detail.component';
+import {MeetCreateComponent} from './meet/meet-create/meet-create-component';
+import { FooterComponent } from './footer/footer.component';
+import {MeetDetailComponent} from './meet/meet-detail/meet-detail.component';
+import { MeetHeaderComponent } from './meet/meet-detail/meet-header/meet-header.component';
 
 @NgModule({
   declarations: [
@@ -35,11 +39,16 @@ import { MessageDetailComponent } from './chat/message-detail/message-detail.com
     UserListComponent,
     UserDetailComponent,
     UserRegisterComponent,
+    MeetCreateComponent,
     UserEditComponent,
     UserDeleteComponent,
     UserSearchComponent,
     MessageListComponent,
     MessageDetailComponent
+    UserSearchComponent,
+    MeetHeaderComponent,
+    FooterComponent,
+    MeetDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,8 +65,8 @@ import { MessageDetailComponent } from './chat/message-detail/message-detail.com
     ReactiveFormsModule,
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true},
     AuthenticationBasicService, LoggedInGuard, UserService
   ],
   bootstrap: [AppComponent]

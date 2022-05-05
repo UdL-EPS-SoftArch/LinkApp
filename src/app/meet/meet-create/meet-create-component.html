@@ -1,0 +1,40 @@
+<form id="user-form" (ngSubmit)="onSubmit()" #form="ngForm">
+  <fieldset>
+    <div class="form-group mb-3" [class.was-validated]="name.dirty || name.touched">
+      <label class="control-label" for="name">Title*</label>
+      <input id="name" name="name" type="text" class="form-control" required
+             [(ngModel)]="meet.title" #name="ngModel">
+      <div class="invalid-feedback">A name is required</div>
+    </div>
+
+    <div class="form-group mb-3" [class.was-validated]="description.dirty || description.touched">
+      <label class="control-label" for="description">Description*</label>
+      <textarea id="description" name="description" type="text" class="form-control" required description
+             [(ngModel)]="meet.description" #description="ngModel">
+      </textarea>
+      <div class="invalid-feedback">A description is required</div>
+    </div>
+
+    <div class="form-group mb-3" [class.was-validated]="initialMeetDate.dirty || initialMeetDate.touched">
+      <label class="control-label" for="initialMeetDate">initialMeetDate*</label>
+      <input id="initialMeetDate" name="initialMeetDate" type="datetime-local" class="form-control" required initialMeetDate
+             [(ngModel)]="meet.initialMeetDate" #initialMeetDate="ngModel">
+      <div class="invalid-feedback">An initialMeetDate is required</div>
+    </div>
+
+    <div class="form-group mb-3" [class.was-validated]="finalMeetDate.dirty || finalMeetDate.touched">
+      <label class="control-label" for="finalMeetDate">finalMeetDate*</label>
+      <input id="finalMeetDate" name="finalMeetDate" type="datetime-local" class="form-control" required finalMeetDate
+             [(ngModel)]="meet.finalMeetDate" #finalMeetDate="ngModel">
+      <div class="invalid-feedback">A finalMeetDate is required</div>
+    </div>
+
+    <div class="form-group fa-pull-right">
+      <button id="listBtn" type="button" (click)="onCancel()"
+              class="btn btn-outline-primary pull-right">Back</button>
+      <button id="submit" type="submit" [disabled]="!form.form.valid"
+              class="btn ms-3 btn-success pull-right">Submit</button>
+    </div>
+
+  </fieldset>
+</form>
