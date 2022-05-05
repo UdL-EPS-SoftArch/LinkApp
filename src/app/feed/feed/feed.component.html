@@ -1,5 +1,5 @@
 <div _ngcontent-wjd-c3="">
-  <h2 _ngcontent-wjd-c3="">Welcome back, {{user.name}}!👋</h2>
+  <h2 _ngcontent-wjd-c3="">Welcome, {{user.name}}!👋</h2>
 </div>
 <br><br>
 
@@ -14,7 +14,7 @@
     <div class="card-body row align-items-center">
       <div class="col-6 mt-1">
         <h6 class="lato-black">Title</h6>
-        <a class="card-text" [routerLink]="['/groups', meet.id]">{{meet.title}}</a>
+        <a class="card-text text-uppercase" [routerLink]="['/groups', meet.id]">{{meet.title}}</a>
       </div>
       <div class="col-6 mt-1">
         <h6 class="card-subtitle text-muted">Description</h6>
@@ -25,18 +25,26 @@
 </div>
 
 <br>
+
+<ngb-pagination class="d-flex justify-content-center"
+                [(page)]="page" [pageSize]="pageSize" [collectionSize]="totalMeets"
+                (pageChange)="changeGroupPage()"></ngb-pagination>
+
+<br>
 <br>
 
 <div class="jumbotron">
   <h5>Your groups</h5>
 </div>
 
+<br>
+
 <div class="card mb-1" *ngFor="let group of groups">
   <div class="card-block row m-1 col-12">
     <div class="card-body row align-items-center">
       <div class="col-6 mt-1">
         <h6 class="lato-black">Title</h6>
-        <a class="card-text" [routerLink]="['/groups', group.id]">{{group.title}}</a>
+        <a class="card-text text-uppercase" [routerLink]="['/groups', group.id]">{{group.title}}</a>
       </div>
       <div class="col-6 mt-1">
         <h6 class="card-subtitle text-muted">Description</h6>
@@ -52,11 +60,4 @@
                 [(page)]="page" [pageSize]="pageSize" [collectionSize]="totalGroups"
                 (pageChange)="changeGroupPage()"></ngb-pagination>
 
-<!--Footer-->
-<footer class="modal-footer">
-  <div class="container">
-    <div class="text-center">
-      <small>Footer...</small>
-    </div>
-  </div>
-</footer>
+

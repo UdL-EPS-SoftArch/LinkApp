@@ -27,4 +27,9 @@ div {
 }
 */
 
+.image{
+  display: inline;
+  max-width: 50%;
+}
+
 
