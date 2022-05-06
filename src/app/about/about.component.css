@@ -51,6 +51,11 @@ div {
   transform: unset;
 }
 
+.red-image {
+  left: 2%;
+  top: 15%;
+}
+
 .btn-round {
   box-sizing: border-box;
   border-width: 2px;
@@ -76,4 +81,14 @@ div {
   border-color:#3c0c36;
 }
 
+.relative {
+  position: relative;
+}
 
+.z-0 {
+  z-index: 0;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
