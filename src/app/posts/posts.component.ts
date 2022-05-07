@@ -34,10 +34,9 @@ export class PostsComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.postService.findByGroup2(this.group).subscribe(
-      (page: PagedResourceCollection<Post>) => {
+    this.postService.findByGroupAndFather(this.group.uri, 'posts/2').subscribe(
+      page => {
         this.posts = page.resources;
-        this.totalPosts = page.totalElements;
       });
   }
 
