@@ -20,8 +20,8 @@ import { MeetDetailComponent } from './meet/meet-detail/meet-detail.component';
 const routes: Routes = [
   { path: 'feed', component: FeedComponent},
   { path: 'meets/create', component: MeetCreateComponent},
-  { path: '/meets/:id/message-list', component: MessageListComponent},
-  { path: '/meets/:id/message-list/:id', component: MessageDetailComponent},
+  { path: 'meets/:id/message-list', component: MessageListComponent},
+  { path: 'meets/:id/message-list/:idMessage', component: MessageDetailComponent},
   { path: 'groups/:id/createMeet', component: MeetCreateComponent},
   { path: 'meets/:id', component: MeetDetailComponent},
   { path: 'users/create', component: UserRegisterComponent},

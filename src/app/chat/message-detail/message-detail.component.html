@@ -1,1 +1,16 @@
-<p>message-display works!</p>
+<div id="faceted" class="row">
+  <div id="facets" class="col-md-9 m-0">
+    <h2>
+      This is the message!
+    </h2>
+    <br>
+    <h6>
+        Author {{ message.author?.name }} from {{ message.creationDate }}
+    </h6>
+    <h4>
+      <i>
+        {{ message.text }}
+      </i>
+    </h4>
+  </div>
+</div>
