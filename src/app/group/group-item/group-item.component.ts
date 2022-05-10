@@ -13,9 +13,11 @@ import {User} from "../../login-basic/user";
 })
 export class GroupItemComponent implements OnInit {
   public group: Group = new Group();
+  public user: User = new User();
 
   constructor(private route: ActivatedRoute,
-              private groupService: GroupService) { }
+              private groupService: GroupService,
+              private authenticationService: AuthenticationBasicService) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
@@ -25,4 +27,8 @@ export class GroupItemComponent implements OnInit {
       });
   }
 
+  joinGroup(): void {
+    this.user = this.authenticationService.getCurrentUser();
+
+  }
 }

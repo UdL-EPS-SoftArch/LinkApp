@@ -14,15 +14,12 @@
         <h6 class="card-subtitle text-muted">Visibility</h6>
         <p class="card-text">{{group.visibility}}</p>
       </div>
-      <div class="card-footer text-right">
+      <div class="card-footer">
         <button id="listBtn" type="button" [routerLink]="['/groups']"
                 class="btn m-1 btn-outline-primary">Group List
         </button>
-        <button id="editBtn" type="button" *ngIf="1" [routerLink]="['edit']"
-                class="btn m-1 btn-outline-success">Edit
-        </button>
-        <button id="deleteBtn" type="button" *ngIf="1" [routerLink]="['delete']"
-                class="btn m-1 btn-outline-danger">Delete
+        <button id="editBtn" type="button"
+                class="btn m-1 btn-outline-success">Join
         </button>
       </div>
     </div>
