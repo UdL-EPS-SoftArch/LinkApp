@@ -4,6 +4,7 @@ import { AuthenticationBasicService } from '../../login-basic/authentication-bas
 import { Location } from '@angular/common';
 import {Meet} from '../meet';
 import {MeetService} from '../meet.service';
+import {GroupService} from "../../group-structure/group.service";
 
 @Component({
   selector: 'app-user-register',
@@ -16,7 +17,8 @@ export class MeetCreateComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private router: Router,
               private location: Location,
-              private meetService: MeetService) {
+              private meetService: MeetService,
+              private groupService: GroupService) {
   }
 
   ngOnInit(): void {
@@ -27,11 +29,15 @@ export class MeetCreateComponent implements OnInit {
   onSubmit(): void {
     this.meet.initialMeetDate = new Date(this.meet.initialMeetDate);
     this.meet.finalMeetDate = new Date(this.meet.finalMeetDate);
-    this.meet.group = '/groups/' + this.groupId; // THIS IS A TEMPORAL FIX WHILE OTHER GROUPS DEVELOP THE GROUP CLASS. TODO CHANGE ME
-    this.meetService.createResource({ body: this.meet }).subscribe(
-      meet => {
-        this.router.navigate([meet.uri]);
-      });
+    this.groupService.getResource(this.groupId).subscribe(
+      group => {
+        this.meet.group = group;
+        this.meetService.createResource({ body: this.meet }).subscribe(
+          meet => {
+            this.router.navigate([meet.uri]);
+          });
+      }
+    );
   }
 
   onCancel(): void {
