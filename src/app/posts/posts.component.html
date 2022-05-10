@@ -1,7 +1,11 @@
 
-Group Works!
-
 <a *ngFor="let post of posts">
-  {{ post.text }} <br>
 
+  <div class="card">
+    <div class="card-body">
+      {{ post.text }} <br>
+    </div>
+  </div>
+  <app-posts [group]="group" [father]="post" [layer]="layer + 10">
+  </app-posts>
 </a>

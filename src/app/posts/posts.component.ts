@@ -24,6 +24,9 @@ export class PostsComponent implements OnInit {
   public group: Group;
   @Input()
   public father: Post;
+  @Input()
+  public layer: number;
+  public layerEm: string;
 
   constructor(private route: ActivatedRoute,
               private groupService: GroupService,
@@ -31,13 +34,19 @@ export class PostsComponent implements OnInit {
               private authenticationService: AuthenticationBasicService
   ) { }
 
-
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.postService.findByGroupAndFather(this.group.uri, 'posts/2').subscribe(
-      page => {
-        this.posts = page.resources;
-      });
+    this.layerEm = this.layer.toString().concat(' em');
+    if (this.father == null){
+      this.postService.findByGroupAndFatherIsNull(this.group.uri).subscribe(
+        page => {
+          this.posts = page.resources;
+        });
+    }else{
+      this.postService.findByGroupAndFather(this.group.uri, this.father.uri).subscribe(
+        page => {
+          this.posts = page.resources;
+        });
+    }
   }
 
 }
