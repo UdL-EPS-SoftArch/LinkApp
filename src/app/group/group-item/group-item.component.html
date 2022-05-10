@@ -1,4 +1,26 @@
-<div class="col-md-4 p-3">
-  <h6 class="card-subtitle text-muted"></h6>
-  <p class="card-text">{{group.title}}</p>
+<div class="card mb-4">
+  <div class="card-block">
+    <h4 class="card-title col-md-12 p-3">{{group.title}}</h4>
+    <div class="card-body row m-1">
+      <div class="col-md-4 p-3">
+        <h6 class="card-subtitle text-muted">Description</h6>
+        <p class="card-text">{{group.description}}</p>
+      </div>
+      <div class="col-md-4 p-3">
+        <h6 class="card-subtitle text-muted">Visibility</h6>
+        <p class="card-text">{{group.visibility}}</p>
+      </div>
+      <div class="card-footer text-right">
+        <button id="listBtn" type="button" [routerLink]="['/groups']"
+                class="btn m-1 btn-outline-primary">Group List
+        </button>
+        <button id="editBtn" type="button" *ngIf="1" [routerLink]="['edit']"
+                class="btn m-1 btn-outline-success">Edit
+        </button>
+        <button id="deleteBtn" type="button" *ngIf="1" [routerLink]="['delete']"
+                class="btn m-1 btn-outline-danger">Delete
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
