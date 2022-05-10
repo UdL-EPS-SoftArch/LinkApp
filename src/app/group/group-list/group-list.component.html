@@ -15,3 +15,7 @@
   </div>
 </div>
 
+<ngb-pagination class="d-flex justify-content-center"
+                [(page)]="page" [pageSize]="pageSize" [collectionSize]="totalGroups"
+                (pageChange)="changePage()"></ngb-pagination>
+
