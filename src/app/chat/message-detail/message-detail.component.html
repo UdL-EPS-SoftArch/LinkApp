@@ -1,16 +1,17 @@
-<div id="faceted" class="row">
-  <div id="facets" class="col-md-9 m-0">
-    <h2>
-      This is the message!
-    </h2>
-    <br>
-    <h6>
-        Author {{ message.author?.name }} from {{ message.creationDate }}
-    </h6>
-    <h4>
-      <i>
-        {{ message.text }}
-      </i>
-    </h4>
+<section class="h-100">
+  <div class=" h-100 d-flex justify-content-center align-items-center">
+    <div>
+      <div class="card" style="margin-top: 20%">
+        <div class="card-header">
+          <h5>Author: {{ message.author?.name }}</h5>
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p>{{ message.text }}</p>
+            <footer class="blockquote-footer">Sent on: {{ message.creationDate }}</footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</section>
