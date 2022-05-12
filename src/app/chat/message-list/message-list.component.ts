@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import { MessageService } from '../message.service';
 import { Message } from '../message';
-import { PagedResourceCollection } from '@lagoshny/ngx-hateoas-client';
+import {PagedResourceCollection, ResourceCollection} from '@lagoshny/ngx-hateoas-client';
 import { AuthenticationBasicService } from '../../login-basic/authentication-basic.service';
 import {User} from '../../login-basic/user';
 import {Meet} from '../../meet/meet';
@@ -38,10 +38,10 @@ export class MessageListComponent implements OnInit {
         this.meet = meet;
       });
 
-    this.messageService.getPage({ pageParams:  { size: this.pageSize }, sort: { creationDate: 'ASC' } }).subscribe(
-      (page: PagedResourceCollection<Message>) => {
-        this.messages = page.resources;
-        this.totalMessages = page.totalElements;
+    this.messageService.findByMeet('meets/' + id).subscribe(
+      (messages: ResourceCollection<Message>) => {
+        this.messages = messages.resources;
+        this.totalMessages = this.messages.length;
         // tslint:disable-next-line:prefer-for-of
         for (let i = 0; i < this.messages.length; i++){
           this.messages[i].getRelation('author').subscribe((author: User) => {

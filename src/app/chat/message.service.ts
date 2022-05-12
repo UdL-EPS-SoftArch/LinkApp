@@ -13,4 +13,9 @@ export class MessageService extends HateoasResourceOperation<Message> {
   public findByMeetContaining(query: string): Observable<ResourceCollection<Message>> {
     return this.searchCollection('findByMeetContaining', { params: { text: query } });
   }
+
+  public findByMeet(query: string): Observable<ResourceCollection<Message>> {
+    return this.searchCollection('findByMeet', { params: { meet: query }, sort: { creationDate: 'ASC' } });
+  }
+
 }
