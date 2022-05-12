@@ -8,6 +8,7 @@
       <div style="text-align: right; margin-top: -35px">
         <button type="button" class="btn btn-link btn-sm" (click)="replyPost('ee')">Reply Post</button>
       </div>
+      <app-post-create [group]="group" [father]="post"></app-post-create>
     </div>
   </div>
     <app-posts [group]="group" [father]="post" [layer]="layer + 2">

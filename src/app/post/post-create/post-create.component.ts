@@ -24,6 +24,7 @@ export class PostCreateComponent implements OnInit {
   }
 
   writeMessage(msg: string): void {
+    alert(msg);
     this.post.text = msg;
   }
 
@@ -31,6 +32,7 @@ export class PostCreateComponent implements OnInit {
     /*this.groupService.getResource({this.group.id}).subscribe(
       group => {
         this.*/
+    alert('gukgu');
     this.post.group = this.group;
     if (this.father != null){
       this.post.father = this.father;
