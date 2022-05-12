@@ -9,7 +9,7 @@ import {User} from "../../login-basic/user";
 @Component({
   selector: 'app-group-item',
   templateUrl: './group-item.component.html',
-  styleUrls: ['./group-item.component.css']
+  styleUrls: ['../group-list/group-list.component.css']
 })
 export class GroupItemComponent implements OnInit {
   public group: Group = new Group();
