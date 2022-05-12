@@ -18,8 +18,7 @@ export class MeetDetailComponent implements OnInit {
   public sameDay: boolean;
 
   constructor(private route: ActivatedRoute,
-              private meetService: MeetService,
-              private groupService: GroupService) {
+              private meetService: MeetService) {
     this.sameDay = false;
   }
 
@@ -28,19 +27,25 @@ export class MeetDetailComponent implements OnInit {
     this.meetService.getResource(id).pipe(
       switchMap(meet => {
         this.meet = meet;
-        this.sameDay = this.initialFinalInSameDay();
+        this.initialFinalInSameDay().then((sameDay) => {
+          this.sameDay = sameDay;
+        });
         return this.meet.getRelation<Group>('group');
       })
     ).subscribe(group => { this.group = group; });
   }
 
-  initialFinalInSameDay(): boolean {
+  async initialFinalInSameDay(): Promise<boolean> {
     const initial = new Date(this.meet.initialMeetDate);
     const final = new Date(this.meet.finalMeetDate);
 
     return initial.getDate() === final.getDate() &&
       initial.getMonth() === final.getMonth() &&
       initial.getFullYear() === final.getFullYear();
+  }
+
+  async groupIsPublic(): Promise<boolean> {
+    return this.group.visibility === 'PUBLIC';
   }
 
 }

@@ -6,6 +6,7 @@ export class Group extends Resource {
   uri: string;
   title: string;
   description: string;
+  visibility: string;
 
   constructor(values: object = {}) {
     super();
