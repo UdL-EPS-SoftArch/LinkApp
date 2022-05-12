@@ -15,7 +15,7 @@ import { MessageListComponent } from './chat/message-list/message-list.component
 import { MeetCreateComponent } from './meet/meet-create/meet-create-component';
 import { MeetDetailComponent } from './meet/meet-detail/meet-detail.component';
 import {GroupStructureComponent} from './group-structure/group-structure.component';
-import {PostsComponent} from './posts/posts.component';
+import {PostsComponent} from './post/posts/posts.component';
 
 
 const routes: Routes = [

@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { HateoasResourceOperation, ResourceCollection } from '@lagoshny/ngx-hateoas-client';
 import { Post } from './post';
-import {User} from '../login-basic/user';
-import {Group} from '../group-structure/group';
+import {User} from '../../login-basic/user';
+import {Group} from '../../group-structure/group';
 import {PagedResourceCollection} from '@lagoshny/ngx-hateoas-client/lib/model/resource/paged-resource-collection';
 
 @Injectable({providedIn: 'root'})

@@ -34,7 +34,8 @@ import { GroupListComponent } from './group/group-list/group-list.component';
 import { GroupItemComponent } from './group/group-item/group-item.component';
 import { GroupSearchComponent } from './group/group-search/group-search.component';
 import {GroupStructureComponent} from './group-structure/group-structure.component';
-import {PostsComponent} from './posts/posts.component';
+import {PostsComponent} from './post/posts/posts.component';
+import { PostCreateComponent } from './post/post-create/post-create.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import {PostsComponent} from './posts/posts.component';
     GroupItemComponent,
     GroupSearchComponent,
     GroupStructureComponent,
-    PostsComponent
+    PostsComponent,
+    PostCreateComponent
   ],
   imports: [
     BrowserModule,
