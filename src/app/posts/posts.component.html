@@ -2,10 +2,14 @@
 <a *ngFor="let post of posts">
 
   <div class="card">
-    <div class="card-body">
-      {{ post.text }} <br>
+    <div class="card-body" [style.margin-left]="layerEm">
+        <h6 class="card-subtitle mb-2 text-muted"><i>{{post.author?.name }}</i></h6>
+        {{ post.text }}
+      <div style="text-align: right; margin-top: -35px">
+        <button type="button" class="btn btn-link btn-sm" (click)="replyPost('ee')">Reply Post</button>
+      </div>
     </div>
   </div>
-  <app-posts [group]="group" [father]="post" [layer]="layer + 10">
-  </app-posts>
+    <app-posts [group]="group" [father]="post" [layer]="layer + 2">
+    </app-posts>
 </a>

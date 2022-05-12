@@ -39,6 +39,8 @@
 
   Ensenyant els meets!
 </a>
+
+
 <a *ngIf="!showMeet">
   <div style="text-align: center; margin-top: 1%; margin-bottom: 5px">
     <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
@@ -49,6 +51,6 @@
       <a class="btn btn-outline-primary" for="btnradio12">Show Posts</a>
     </div>
   </div>
-  <app-posts [group]="group" [father]="null" [layer]="0">
+  <app-posts [group]="group" [father]="null" [layer]="1">
   </app-posts>
 </a>

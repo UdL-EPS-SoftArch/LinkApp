@@ -7,6 +7,8 @@ import {Post} from './post';
 import {Group} from '../group-structure/group';
 import {GroupService} from '../group-structure/group.service';
 import {PagedResourceCollection} from '@lagoshny/ngx-hateoas-client';
+import {UserRoleKey} from './UserRoleKey';
+import {UserRole} from './UserRole';
 
 
 @Component({
@@ -34,21 +36,36 @@ export class PostsComponent implements OnInit {
               private authenticationService: AuthenticationBasicService
   ) { }
 
+  replyPost(postUri: string): void {
+    window.scrollTo(0, 0);
+  }
+
   ngOnInit(): void {
-    this.layerEm = this.layer.toString().concat(' em');
-    if (this.father == null){
+    this.layerEm = this.layer.toString().concat('em');
+    if (this.father == null) {
       this.postService.findByGroupAndFatherIsNull(this.group.uri).subscribe(
         page => {
           this.posts = page.resources;
+          // tslint:disable-next-line:prefer-for-of
+          for (let i = 0; i < this.posts.length; i++) {
+            this.posts[i].getRelation('user').subscribe((author: User) => {
+              this.posts[i].author = author;
+            });
+          }
         });
-    }else{
+    } else {
       this.postService.findByGroupAndFather(this.group.uri, this.father.uri).subscribe(
         page => {
           this.posts = page.resources;
+          // tslint:disable-next-line:prefer-for-of
+          for (let i = 0; i < this.posts.length; i++) {
+            this.posts[i].getRelation('user').subscribe((author: User) => {
+              this.posts[i].author = author;
+            });
+          }
         });
     }
   }
-
 }
 
 

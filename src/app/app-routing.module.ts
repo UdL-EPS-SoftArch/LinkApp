@@ -8,22 +8,34 @@ import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { UserDeleteComponent } from './user/user-delete/user-delete.component';
-import { GroupStructureComponent} from './group-structure/group-structure.component';
-import { PostsComponent} from './posts/posts.component';
+import {GroupListComponent} from './group/group-list/group-list.component';
+import {GroupSearchComponent} from './group/group-search/group-search.component';
+import { FeedComponent } from './feed/feed/feed.component';
+import { MessageListComponent } from './chat/message-list/message-list.component';
+import { MeetCreateComponent } from './meet/meet-create/meet-create-component';
+import { MeetDetailComponent } from './meet/meet-detail/meet-detail.component';
+import {GroupStructureComponent} from './group-structure/group-structure.component';
+import {PostsComponent} from './posts/posts.component';
+
 
 const routes: Routes = [
+  { path: 'feed', component: FeedComponent},
+  { path: 'meets/create', component: MeetCreateComponent},
+  { path: '/meets/:id/message-list', component: MessageListComponent},
+  { path: 'groups/:id/createMeet', component: MeetCreateComponent},
+  { path: 'meets/:id', component: MeetDetailComponent},
   { path: 'users/create', component: UserRegisterComponent},
   { path: 'users/:id/delete', component: UserDeleteComponent, canActivate: [LoggedInGuard]},
   { path: 'users/:id/edit', component: UserEditComponent, canActivate: [LoggedInGuard]},
   { path: 'users/:id', component: UserDetailComponent, canActivate: [LoggedInGuard]},
   { path: 'users', component: UserListComponent, canActivate: [LoggedInGuard]},
+  { path: 'groups', component: GroupListComponent},
   { path: 'about', component: AboutComponent},
   { path: '404', component: NotFoundComponent},
   { path: 'group/:id/meets', component: GroupStructureComponent},
   { path: 'group/:id/posts', component: GroupStructureComponent},
   { path: 'posts', component: PostsComponent},
   { path: '', redirectTo: 'about', pathMatch: 'full'},
-
 ];
 
 @NgModule({
