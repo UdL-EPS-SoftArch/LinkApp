@@ -1,10 +1,13 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Group} from '../Group';
-import {ActivatedRoute} from "@angular/router";
-import {UserService} from "../../user/user.service";
-import {AuthenticationBasicService} from "../../login-basic/authentication-basic.service";
-import { GroupService } from '../group.service';
-import {User} from "../../login-basic/user";
+import {ActivatedRoute} from '@angular/router';
+import {AuthenticationBasicService} from '../../login-basic/authentication-basic.service';
+import {GroupService} from '../group.service';
+import {User} from '../../login-basic/user';
+import {UserRoleEnum} from '../../role/UserRoleEnum';
+import {UserRoleKey} from '../../role/RoleKey';
+import {UserRole} from '../../role/UserRole';
+import {UserRoleService} from "../../role/userrole.service";
 
 @Component({
   selector: 'app-group-item',
@@ -14,10 +17,13 @@ import {User} from "../../login-basic/user";
 export class GroupItemComponent implements OnInit {
   public group: Group = new Group();
   public user: User = new User();
+  private key: UserRoleKey = new UserRoleKey();
+  private userRole: UserRole = new UserRole();
 
   constructor(private route: ActivatedRoute,
               private groupService: GroupService,
-              private authenticationService: AuthenticationBasicService) { }
+              private authenticationService: AuthenticationBasicService,
+              private userRoleService: UserRoleService) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
@@ -29,6 +35,10 @@ export class GroupItemComponent implements OnInit {
 
   joinGroup(): void {
     this.user = this.authenticationService.getCurrentUser();
-
+    this.key.group = this.group;
+    this.key.user = this.user;
+    this.userRole.roleKey = this.key;
+    this.userRole.role = UserRoleEnum.SUBSCRIBED;
+    this.userRoleService.createResource({ body: this.userRole });
   }
 }
