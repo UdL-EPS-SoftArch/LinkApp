@@ -9,13 +9,15 @@ import {User} from "../../login-basic/user";
 @Component({
   selector: 'app-group-item',
   templateUrl: './group-item.component.html',
-  styleUrls: ['./group-item.component.css']
+  styleUrls: ['../group-list/group-list.component.css']
 })
 export class GroupItemComponent implements OnInit {
   public group: Group = new Group();
+  public user: User = new User();
 
   constructor(private route: ActivatedRoute,
-              private groupService: GroupService) { }
+              private groupService: GroupService,
+              private authenticationService: AuthenticationBasicService) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
@@ -25,4 +27,8 @@ export class GroupItemComponent implements OnInit {
       });
   }
 
+  joinGroup(): void {
+    this.user = this.authenticationService.getCurrentUser();
+
+  }
 }
