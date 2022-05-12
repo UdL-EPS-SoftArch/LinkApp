@@ -14,11 +14,14 @@ import { FeedComponent } from './feed/feed/feed.component';
 import { MessageListComponent } from './chat/message-list/message-list.component';
 import { MeetCreateComponent } from './meet/meet-create/meet-create-component';
 import { MeetDetailComponent } from './meet/meet-detail/meet-detail.component';
+import {MeetCardComponent} from "./meet/meet-card/meet-card.component";
+import {MeetCardListComponent} from "./meet/meet-card-list/meet-card-list.component";
 
 
 const routes: Routes = [
   { path: 'feed', component: FeedComponent},
-  { path: '/meets/:id/message-list', component: MessageListComponent},
+  { path: 'groups/:id/meet-card-list', component: MeetCardListComponent},
+  { path: 'meets/:id/message-list', component: MessageListComponent},
   { path: 'groups/:id/createMeet', component: MeetCreateComponent},
   { path: 'meets/:id', component: MeetDetailComponent},
   { path: 'users/create', component: UserRegisterComponent},
