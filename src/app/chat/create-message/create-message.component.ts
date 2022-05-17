@@ -6,6 +6,7 @@ import {GroupService} from '../../group-structure/group.service';
 import {User} from '../../login-basic/user';
 import {Message} from '../message';
 import {MessageService} from '../message.service';
+import {BigInteger} from "@angular/compiler/src/i18n/big_integer";
 
 @Component({
   selector: 'app-create-message',
@@ -17,7 +18,7 @@ export class CreateMessageComponent implements OnInit {
   public message: Message = new Message();
   private groupId: string;
   @Input()
-  private meetId: string;
+  public meetId: string;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
