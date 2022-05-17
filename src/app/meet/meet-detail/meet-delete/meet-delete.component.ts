@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Meet } from '../../meet';
-import { MeetService } from '../../meet.service';
+import {Component, Input, OnInit} from '@angular/core';
+import {Meet} from '../../meet';
+import {MeetService} from '../../meet.service';
 import Swal from 'sweetalert2';
 import {Router} from "@angular/router";
 
@@ -30,18 +30,20 @@ export class MeetDeleteComponent implements OnInit {
         text: 'You won\'t be able to revert this!',
         confirmButtonText: 'Yes, delete',
         showCancelButton: true
-      }).then(() => {
-        this.meetService.deleteResource(this.meet).subscribe(
-          () => {
-            Swal.fire(
-              'Deleted!',
-              'The meet has been deleted.',
-              'success'
-            ).then(() => {
-              this.router.navigate(['']);
-            });
-          }
-        );
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.meetService.deleteResource(this.meet).subscribe(
+            () => {
+              Swal.fire(
+                'Deleted!',
+                'The meet has been deleted.',
+                'success'
+              ).then(() => {
+                this.router.navigate(['']);
+              });
+            }
+          );
+        }
       })
     }
   }
