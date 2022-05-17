@@ -36,6 +36,7 @@ import { GroupSearchComponent } from './group/group-search/group-search.componen
 import {GroupStructureComponent} from './group-structure/group-structure.component';
 import {PostsComponent} from './post/posts/posts.component';
 import { PostCreateComponent } from './post/post-create/post-create.component';
+import { GroupMembersComponent } from './group-members/group-members.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { PostCreateComponent } from './post/post-create/post-create.component';
     GroupSearchComponent,
     GroupStructureComponent,
     PostsComponent,
-    PostCreateComponent
+    PostCreateComponent,
+    GroupMembersComponent
   ],
   imports: [
     BrowserModule,

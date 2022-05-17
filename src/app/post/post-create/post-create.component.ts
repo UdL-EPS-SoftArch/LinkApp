@@ -23,10 +23,6 @@ export class PostCreateComponent implements OnInit {
     this.post = new Post();
   }
 
-  /*writeMessage(msg: string): void {
-    alert(msg);
-    this.post.text = msg;
-  }*/
 
   onSubmit(): void{
     this.post.group = this.group;
