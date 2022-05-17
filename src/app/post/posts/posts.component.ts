@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, OnChanges, OnDestroy, SimpleChanges} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {PostService} from './post.service';
 import {AuthenticationBasicService} from '../../login-basic/authentication-basic.service';
@@ -16,7 +16,7 @@ import {UserRole} from './UserRole';
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.css']
 })
-export class PostsComponent implements OnInit {
+export class PostsComponent implements OnInit, OnChanges, OnDestroy {
   public user: User = new User();
   public posts: Post[] = [];
   public totalPosts = 0;
@@ -38,6 +38,14 @@ export class PostsComponent implements OnInit {
 
   replyPost(postUri: string): void {
     window.scrollTo(0, 0);
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    this.ngOnInit();
+  }
+
+  ngOnDestroy() {
+    this.ngOnInit();
   }
 
   ngOnInit(): void {

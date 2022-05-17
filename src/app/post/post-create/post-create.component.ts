@@ -3,6 +3,7 @@ import {Group} from '../../group-structure/group';
 import {Post} from '../posts/post';
 import {PostService} from '../posts/post.service';
 import {Router} from '@angular/router';
+import {PostsComponent} from '../posts/posts.component';
 
 @Component({
   selector: 'app-post-create',
@@ -15,12 +16,17 @@ export class PostCreateComponent implements OnInit {
   @Input()
   public father: Post;
   public post: Post;
+
   constructor(
     private router: Router,
     private postService: PostService) { }
 
   ngOnInit(): void {
     this.post = new Post();
+  }
+
+  delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
   }
 
 
@@ -34,6 +40,8 @@ export class PostCreateComponent implements OnInit {
         this.router.navigate([post.uri]);
       }
     );
-    this.ngOnInit();
+    const positionY = window.scrollY;
+    const positionX = window.scrollX;
+    window.location.reload();
   }
 }
