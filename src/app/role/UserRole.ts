@@ -4,8 +4,8 @@ import {Group} from '../group/Group';
 import {UserRoleEnum} from './UserRoleEnum';
 import {UserRoleKey} from './RoleKey';
 
-@HateoasResource('userroles')
+@HateoasResource('userRoles')
 export class UserRole extends Resource  {
   roleKey: UserRoleKey;
-  role: UserRoleEnum;
+  role: string;
 }

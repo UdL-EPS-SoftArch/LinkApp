@@ -35,10 +35,10 @@ export class GroupItemComponent implements OnInit {
 
   joinGroup(): void {
     this.user = this.authenticationService.getCurrentUser();
-    this.key.group = this.group;
-    this.key.user = this.user;
+    this.key.group = this.group.uri;
+    this.key.user = '/users/' + this.user.id;
     this.userRole.roleKey = this.key;
-    this.userRole.role = UserRoleEnum.SUBSCRIBED;
-    this.userRoleService.createResource({ body: this.userRole });
+    this.userRole.role = 'SUBSCRIBED';
+    this.userRoleService.createResource({ body: this.userRole }).subscribe();
   }
 }

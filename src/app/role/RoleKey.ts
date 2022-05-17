@@ -4,6 +4,6 @@ import {Group} from '../group/Group';
 
 @HateoasResource('userrolekeys')
 export class UserRoleKey extends Resource  {
-  group: Group;
-  user: User;
+  group: string;
+  user: string;
 }
