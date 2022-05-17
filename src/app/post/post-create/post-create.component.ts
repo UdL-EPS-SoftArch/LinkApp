@@ -23,16 +23,12 @@ export class PostCreateComponent implements OnInit {
     this.post = new Post();
   }
 
-  writeMessage(msg: string): void {
+  /*writeMessage(msg: string): void {
     alert(msg);
     this.post.text = msg;
-  }
+  }*/
 
   onSubmit(): void{
-    /*this.groupService.getResource({this.group.id}).subscribe(
-      group => {
-        this.*/
-    alert('gukgu');
     this.post.group = this.group;
     if (this.father != null){
       this.post.father = this.father;
@@ -42,5 +38,6 @@ export class PostCreateComponent implements OnInit {
         this.router.navigate([post.uri]);
       }
     );
+    this.ngOnInit();
   }
 }
