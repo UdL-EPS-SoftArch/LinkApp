@@ -33,12 +33,14 @@ export class GroupItemComponent implements OnInit {
       });
   }
 
-  joinGroup(): void {
+  joinGroup(element, text): void {
     this.user = this.authenticationService.getCurrentUser();
     this.key.group = this.group.uri;
     this.key.user = '/users/' + this.user.id;
     this.userRole.roleKey = this.key;
     this.userRole.role = 'SUBSCRIBED';
     this.userRoleService.createResource({ body: this.userRole }).subscribe();
+    element.textContent = text;
+    element.disabled = true;
   }
 }
