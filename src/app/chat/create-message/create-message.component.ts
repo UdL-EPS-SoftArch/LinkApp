@@ -1,13 +1,11 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import { AuthenticationBasicService } from '../../login-basic/authentication-basic.service';
-import { Location } from '@angular/common';
-import {Meet} from '../../meet';
 import {MeetService} from '../../meet/meet.service';
-import {GroupService} from "../../group-structure/group.service";
-import {User} from "../../login-basic/user";
-import {Message} from "../message";
-import {MessageService} from "../message.service";
+import {GroupService} from '../../group-structure/group.service';
+import {User} from '../../login-basic/user';
+import {Message} from '../message';
+import {MessageService} from '../message.service';
 
 @Component({
   selector: 'app-create-message',
@@ -30,8 +28,8 @@ export class CreateMessageComponent implements OnInit {
               ) { }
 
   ngOnInit(): void {
-    //group
-    //meet
+    // group
+    // meet
     this.meetId = this.route.snapshot.paramMap.get('id');
   }
 
@@ -39,11 +37,11 @@ export class CreateMessageComponent implements OnInit {
     this.message.creationDate = new Date (this.message.creationDate);
     this.meetService.getResource(this.meetId).subscribe(
       meet => {this.message.meet = meet;
-        this.messageService.createResource({ body: this.message }).subscribe(
+               this.messageService.createResource({ body: this.message }).subscribe(
           message => {
             this.router.navigate([message.uri]);
           });
         }
-      )
+      );
   }
 }
