@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Meet } from '../../meet';
 import { MeetService } from '../../meet.service';
 import Swal from 'sweetalert2';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-meet-delete',
@@ -12,7 +13,10 @@ export class MeetDeleteComponent implements OnInit {
 
   @Input() meet: Meet;
 
-  constructor(private meetService: MeetService) {
+  constructor(
+    private meetService: MeetService,
+    private router: Router
+  ) {
   }
 
   ngOnInit(): void {
@@ -33,7 +37,9 @@ export class MeetDeleteComponent implements OnInit {
               'Deleted!',
               'The meet has been deleted.',
               'success'
-            );
+            ).then(() => {
+              this.router.navigate(['']);
+            });
           }
         );
       })
