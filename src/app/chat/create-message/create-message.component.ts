@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import { AuthenticationBasicService } from '../../login-basic/authentication-basic.service';
 import { Location } from '@angular/common';
@@ -18,6 +18,7 @@ export class CreateMessageComponent implements OnInit {
   public user: User = new User();
   public message: Message = new Message();
   private groupId: string;
+  @Input()
   private meetId: string;
 
   constructor(private route: ActivatedRoute,
