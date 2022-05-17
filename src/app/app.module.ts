@@ -33,6 +33,7 @@ import { MeetHeaderComponent } from './meet/meet-detail/meet-header/meet-header.
 import { GroupListComponent } from './group/group-list/group-list.component';
 import { GroupItemComponent } from './group/group-item/group-item.component';
 import { GroupSearchComponent } from './group/group-search/group-search.component';
+import { MeetDeleteComponent } from './meet/meet-detail/meet-delete/meet-delete.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { GroupSearchComponent } from './group/group-search/group-search.componen
     UserSearchComponent,
     GroupListComponent,
     GroupItemComponent,
-    GroupSearchComponent
+    GroupSearchComponent,
+    MeetDeleteComponent
   ],
   imports: [
     BrowserModule,

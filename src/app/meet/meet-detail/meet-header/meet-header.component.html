@@ -1,7 +1,12 @@
 <div class="border-bottom border-2">
   <div class="container mt-3">
     <div class="row">
-      <time class="text-black-50 mb-1">{{ meet?.initialMeetDate | date:'fullDate' }}</time>
+      <div class="col">
+        <div class="row d-flex align-items-center mb-2">
+          <div class="col"><time class="text-black-50 mb-1">{{ meet?.initialMeetDate | date:'fullDate' }}</time></div>
+          <div class="col text-end"><app-meet-delete [meet]="meet"></app-meet-delete></div>
+        </div>
+      </div>
       <h1 class="lato-black mb-2">{{ meet?.title }}</h1>
     </div>
     <div class="row mt-2">
@@ -13,6 +18,9 @@
           <div class="col-sm-5">
             <p class="mb-1">Hosted by</p>
             <p class="lato-black">{{group?.title}}</p>
+          </div>
+          <div class="col-sm-5">
+
           </div>
         </div>
       </div>
