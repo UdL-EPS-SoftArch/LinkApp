@@ -1,1 +1,4 @@
-<p>create-message works!</p>
+<form class="input-group mb-3" (ngSubmit)="onSubmit()">
+  <input required type="text" [(ngModel)]="message.text" class="form-control" placeholder="Write your message" aria-label="Write your message" aria-describedby="button-addon2">
+  <button class="form-group btn btn-outline-secondary" type="submit" id="submit">Button</button>
+</form>
