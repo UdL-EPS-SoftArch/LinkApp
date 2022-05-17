@@ -32,7 +32,9 @@ export class MeetDetailComponent implements OnInit {
         });
         return this.meet.getRelation<Group>('group');
       })
-    ).subscribe(group => { this.group = group; });
+    ).subscribe(group => {
+      this.group = group;
+    });
   }
 
   async initialFinalInSameDay(): Promise<boolean> {
@@ -45,7 +47,11 @@ export class MeetDetailComponent implements OnInit {
   }
 
   async groupIsPublic(): Promise<boolean> {
-    return this.group.visibility === 'PUBLIC';
+    if (this.group) {
+      return this.group.visibility === 'PUBLIC';
+    } else {
+      return true;
+    }
   }
 
 }
