@@ -6,7 +6,7 @@ import {PagedResourceCollection, ResourceCollection} from '@lagoshny/ngx-hateoas
 import { AuthenticationBasicService } from '../../login-basic/authentication-basic.service';
 import {User} from '../../login-basic/user';
 import {Meet} from '../../meet/meet';
-import {MeetService} from "../../meet/meet.service";
+import {MeetService} from '../../meet/meet.service';
 
 
 @Component({

@@ -6,7 +6,6 @@ import {GroupService} from '../../group-structure/group.service';
 import {User} from '../../login-basic/user';
 import {Message} from '../message';
 import {MessageService} from '../message.service';
-import {BigInteger} from "@angular/compiler/src/i18n/big_integer";
 
 @Component({
   selector: 'app-create-message',
@@ -14,6 +13,7 @@ import {BigInteger} from "@angular/compiler/src/i18n/big_integer";
 //  styleUrls: ['./create-message.component.css']
 })
 export class CreateMessageComponent implements OnInit {
+  @Input()
   public user: User = new User();
   public message: Message = new Message();
   private groupId: string;
