@@ -67,7 +67,6 @@ export class MeetDetailComponent implements OnInit {
 
   getUserPermission(): void {
     const user: User = this.authenticationService.getCurrentUser();
-    console.log(user)
     if (this.group && user) {
       this.userRoleService.customQuery(
         HttpMethod.GET,
