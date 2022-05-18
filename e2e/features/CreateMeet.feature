@@ -3,7 +3,8 @@ Feature: Create Meet
   The user must be able to
   create a meeting
   Background:
-    Given I log in as "default1" with password "password"
+    Given I'm in the homepage
+    And I log in as "default1" with password "password"
 
   Scenario: Create new meet
     Given I go to the meet creation page of group 1
