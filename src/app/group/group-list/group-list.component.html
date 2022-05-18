@@ -1,3 +1,21 @@
 <app-group-search (emitResults)="detail($event)"></app-group-search>
-<app-group-item *ngFor = "let group of groups" [group] = "group"></app-group-item >
+
+<div class="card mb-1" *ngFor="let group of groups">
+  <div class="card-block row m-1 col-12">
+    <div class="card-body row align-items-center">
+      <div class="col-6 mt-1">
+        <h6 class="card-subtitle text-muted">Title</h6>
+        <a class="card-text" [routerLink]="[group.uri]">{{group.title}}</a>
+      </div>
+      <div class="col-6 mt-1">
+        <h6 class="card-subtitle text-muted">Description</h6>
+        <p class="card-text justified-text">{{group.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ngb-pagination class="d-flex justify-content-center"
+                [(page)]="page" [pageSize]="pageSize" [collectionSize]="totalGroups"
+                (pageChange)="changePage()"></ngb-pagination>
 
