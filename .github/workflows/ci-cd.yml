@@ -6,7 +6,7 @@ name: CI/CD
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, meets ]
   pull_request:
     branches: [ main ]
 

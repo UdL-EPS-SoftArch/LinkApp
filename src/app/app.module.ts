@@ -33,6 +33,8 @@ import { MeetHeaderComponent } from './meet/meet-detail/meet-header/meet-header.
 import { GroupListComponent } from './group/group-list/group-list.component';
 import { GroupItemComponent } from './group/group-item/group-item.component';
 import { GroupSearchComponent } from './group/group-search/group-search.component';
+import { MeetCardComponent } from './meet/meet-card/meet-card.component';
+import { MeetCardListComponent } from './meet/meet-card-list/meet-card-list.component';
 import { MeetDeleteComponent } from './meet/meet-detail/meet-delete/meet-delete.component';
 import {CommonModule} from "@angular/common";
 
@@ -60,6 +62,8 @@ import {CommonModule} from "@angular/common";
     GroupListComponent,
     GroupItemComponent,
     GroupSearchComponent,
+    MeetCardComponent,
+    MeetCardListComponent,
     MeetDeleteComponent
   ],
     imports: [
