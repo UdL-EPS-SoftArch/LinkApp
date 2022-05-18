@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Meet} from '../../meet';
+import { Group } from '../../../group-structure/group';
+import { Meet } from '../../meet';
 
 @Component({
   selector: 'app-meet-header',
@@ -9,6 +10,7 @@ import {Meet} from '../../meet';
 export class MeetHeaderComponent implements OnInit {
 
   @Input() meet: Meet;
+  @Input() group: Group;
 
   constructor() { }
 
