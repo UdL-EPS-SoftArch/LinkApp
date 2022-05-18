@@ -1,13 +1,15 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import { AuthenticationBasicService } from '../../login-basic/authentication-basic.service';
 import {MeetService} from '../../meet/meet.service';
 import {Meet} from '../../meet/meet';
-import {GroupService} from '../../group-structure/group.service';
-import {Group} from '../../group-structure/group';
+import {GroupService} from '../../group/group.service';
+import {Group} from '../../group/group';
 import {User} from '../../login-basic/user';
 import {Message} from '../message';
 import {MessageService} from '../message.service';
+import {switchMap} from 'rxjs/operators';
+import {group} from '@angular/animations';
 
 @Component({
   selector: 'app-create-message',
@@ -20,6 +22,9 @@ export class CreateMessageComponent implements OnInit {
   public message: Message = new Message();
   @Input()
   public meet: Meet;
+  public group: Group;
+  @Output()
+  newItemEvent = new EventEmitter<Message>();
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -36,17 +41,21 @@ export class CreateMessageComponent implements OnInit {
   }
 
   onSubmit(): void {
+    const id = this.route.snapshot.paramMap.get('id');
     this.message.creationDate = new Date (this.message.creationDate);
-    this.message.group = this.meet.group;
-    this.meetService.getResource((this.meet.id).toString()).subscribe(
-      meet => {
+    this.meetService.getResource(id).pipe(
+      switchMap(meet => {
         this.message.meet = meet;
-        this.messageService.createResource({body: this.message}).subscribe(
-          message => {
-            this.router.navigate([message.uri]);
-          }
-        );
-      }
-    );
+        return this.message.meet.getRelation<Group>('group');
+      }),
+      // tslint:disable-next-line:no-shadowed-variable
+      switchMap(group => {
+        this.message.group = group;
+        return this.messageService.createResource({body: this.message});
+      }),
+      // tslint:disable-next-line:no-shadowed-variable
+    ).subscribe(message => {
+      this.newItemEvent.emit(message);
+    });
   }
 }

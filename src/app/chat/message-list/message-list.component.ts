@@ -59,4 +59,9 @@ export class MessageListComponent implements OnInit {
     return new User(JSON.parse(localStorage.getItem('currentUser')));
   }
 
+  addItem(newItem: Message) {
+    newItem.author = this.getCurrentUser();
+    this.messages.push(newItem);
+  }
+
 }

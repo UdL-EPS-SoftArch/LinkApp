@@ -16,6 +16,7 @@
           <div class="chat-history">
             <ul class="m-b-0">
               <li class="clearfix"  *ngFor="let message of messages">
+                {{message.text}}
                 <div class="message other-message float-right" *ngIf="user.email===message.author.email">
                   <p style="font-weight: bold;">{{message.author.email}}</p>
                   {{message.text}}
@@ -37,7 +38,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fa fa-send"></i></span>
               </div>
-              <app-create-message [meet]="meet" [user]="user"></app-create-message>
+              <app-create-message (newItemEvent)="addItem($event)" [meet]="meet" [user]="user"></app-create-message>
             </div>
           </div>
         </div>
