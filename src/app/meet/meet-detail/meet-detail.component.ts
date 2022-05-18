@@ -2,13 +2,14 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {MeetService} from '../meet.service';
 import {Meet} from '../meet';
-import {switchMap} from 'rxjs/operators';
+import {catchError, switchMap} from 'rxjs/operators';
 import {Group} from '../../group-structure/group';
 import {UserRoleService} from "../../role/userrole.service";
 import {AuthenticationBasicService} from "../../login-basic/authentication-basic.service";
 import {User} from "../../login-basic/user";
 import {HttpMethod} from "@lagoshny/ngx-hateoas-client";
 import {UserRole} from "../../role/UserRole";
+import {of} from "rxjs";
 
 @Component({
   selector: 'app-meet-list',
@@ -71,6 +72,8 @@ export class MeetDetailComponent implements OnInit {
       this.userRoleService.customQuery(
         HttpMethod.GET,
         'UserRoleKey_user_id_' + user.id + '_group_id_' + this.group.id
+      ).pipe(
+        catchError(err => of([]))
       ).subscribe((userRole: UserRole) => {
         this.hasPermission =  userRole.role == 'ADMIN' || userRole.role == 'AUTHORIZED';
       })
