@@ -13,4 +13,11 @@ Feature: Create post
     And I click the "Submit" button
     Then I'm logged in as user "demo"
 
+  Scenario: I create a post
+    Given I am in group-post page "1"
+    When I fill the form with
+      | FIELD    | VALUE         |
+      | message_init  | hola que tal  |
+    And I click the "Post it" button
+
 

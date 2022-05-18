@@ -23,3 +23,7 @@ Then('I\'m logged in as user {string}', (username) => {
     .invoke('text')
     .should('contains', username);
 });
+
+Given('I am in group-post page {string}', (id) => {
+  cy.visit('http://localhost:4200/group/'.concat(id).concat('/posts'));
+});
