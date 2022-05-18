@@ -10,7 +10,8 @@ export class Message extends Resource {
   text: string;
   author: User;
   meet: Meet;
-  group: Group;
+  group: string;
+//  group: Group;
   uri: string;
 
   constructor(values: object = {}) {
