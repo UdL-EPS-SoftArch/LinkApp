@@ -18,7 +18,7 @@ export class FeedComponent implements OnInit {
   public user: User;
   public groups: Group[] = [];
   public meets: Meet[] = [];
-  public pageSize = 5;
+  public pageSize = 2;
   public page = 1;
   public totalGroups = 0;
   public totalMeets = 0;
