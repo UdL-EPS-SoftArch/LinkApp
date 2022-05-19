@@ -39,15 +39,10 @@
         </div>
       </div>
       <p class="text-center less-bottom-pad"></p>
-      <h2 class="text-center">Search by theme</h2>
+      <h2 class="text-center">Take a deeper look at some of our current groups:</h2>
       <div _ngcontent-c4="" class="row top-pad">
         <div _ngcontent-c4="" class="col-md-12 text-center">
-          <button _ngcontent-c4="" class="btn btn-round" type="button">Fitness</button>
-          <button _ngcontent-c4="" class="btn btn-round" type="button">Fashion</button>
-          <button _ngcontent-c4="" class="btn btn-round" type="button">Animals</button>
-          <button _ngcontent-c4="" class="btn btn-round" type="button">Literature</button>
-          <button _ngcontent-c4="" class="btn btn-round" type="button">Travel</button>
-          <button _ngcontent-c4="" class="btn btn-round" type="button">Family</button>
+          <button _ngcontent-c4="" class="btn btn-round" type="button" *ngFor="let group of groups | slice:0:5; let i=index" [routerLink]="[group.uri]">{{group.title}}</button>
         </div>
       </div>
     </div>
