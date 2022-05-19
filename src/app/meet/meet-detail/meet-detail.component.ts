@@ -2,9 +2,14 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {MeetService} from '../meet.service';
 import {Meet} from '../meet';
-import {switchMap} from 'rxjs/operators';
+import {catchError, switchMap} from 'rxjs/operators';
 import {Group} from '../../group-structure/group';
-import {GroupService} from '../../group-structure/group.service';
+import {UserRoleService} from "../../role/userrole.service";
+import {AuthenticationBasicService} from "../../login-basic/authentication-basic.service";
+import {User} from "../../login-basic/user";
+import {HttpMethod} from "@lagoshny/ngx-hateoas-client";
+import {UserRole} from "../../role/UserRole";
+import {of} from "rxjs";
 
 @Component({
   selector: 'app-meet-list',
@@ -16,10 +21,16 @@ export class MeetDetailComponent implements OnInit {
   public meet: Meet;
   public group: Group;
   public sameDay: boolean;
+  public hasPermission: boolean;
 
-  constructor(private route: ActivatedRoute,
-              private meetService: MeetService) {
+  constructor(
+    private route: ActivatedRoute,
+    private meetService: MeetService,
+    private userRoleService: UserRoleService,
+    private authenticationService: AuthenticationBasicService,
+  ) {
     this.sameDay = false;
+    this.hasPermission = false;
   }
 
   ngOnInit(): void {
@@ -34,6 +45,7 @@ export class MeetDetailComponent implements OnInit {
       })
     ).subscribe(group => {
       this.group = group;
+      this.getUserPermission()
     });
   }
 
@@ -51,6 +63,20 @@ export class MeetDetailComponent implements OnInit {
       return this.group.visibility === 'PUBLIC';
     } else {
       return true;
+    }
+  }
+
+  getUserPermission(): void {
+    const user: User = this.authenticationService.getCurrentUser();
+    if (this.group && user) {
+      this.userRoleService.customQuery(
+        HttpMethod.GET,
+        'UserRoleKey_user_id_' + user.id + '_group_id_' + this.group.id
+      ).pipe(
+        catchError(err => of([]))
+      ).subscribe((userRole: UserRole) => {
+        this.hasPermission =  userRole.role == 'ADMIN' || userRole.role == 'AUTHORIZED';
+      })
     }
   }
 

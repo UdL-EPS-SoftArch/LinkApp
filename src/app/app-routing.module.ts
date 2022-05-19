@@ -14,6 +14,7 @@ import { FeedComponent } from './feed/feed/feed.component';
 import { MessageListComponent } from './chat/message-list/message-list.component';
 import { MeetCreateComponent } from './meet/meet-create/meet-create-component';
 import { MeetDetailComponent } from './meet/meet-detail/meet-detail.component';
+import {GroupItemComponent} from "./group/group-item/group-item.component";
 import {MeetCardComponent} from "./meet/meet-card/meet-card.component";
 import {MeetCardListComponent} from "./meet/meet-card-list/meet-card-list.component";
 
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'users/:id', component: UserDetailComponent, canActivate: [LoggedInGuard]},
   { path: 'users', component: UserListComponent, canActivate: [LoggedInGuard]},
   { path: 'groups', component: GroupListComponent},
+  { path: 'groups/:id', component: GroupItemComponent},
   { path: 'about', component: AboutComponent},
   { path: '404', component: NotFoundComponent},
   { path: '', redirectTo: 'about', pathMatch: 'full'},

@@ -36,6 +36,7 @@ import { GroupSearchComponent } from './group/group-search/group-search.componen
 import { MeetCardComponent } from './meet/meet-card/meet-card.component';
 import { MeetCardListComponent } from './meet/meet-card-list/meet-card-list.component';
 import { MeetDeleteComponent } from './meet/meet-detail/meet-delete/meet-delete.component';
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -65,20 +66,21 @@ import { MeetDeleteComponent } from './meet/meet-detail/meet-delete/meet-delete.
     MeetCardListComponent,
     MeetDeleteComponent
   ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    AppRoutingModule,
-    HttpClientModule,
-    NgbCollapseModule,
-    NgbDropdownModule,
-    NgbPaginationModule,
-    NgxHateoasClientModule.forRoot(),
-    LoginBasicModule,
-    ErrorHandlerModule,
-    NgbModule,
-    ReactiveFormsModule,
-  ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        AppRoutingModule,
+        HttpClientModule,
+        NgbCollapseModule,
+        NgbDropdownModule,
+        NgbPaginationModule,
+        NgxHateoasClientModule.forRoot(),
+        LoginBasicModule,
+        ErrorHandlerModule,
+        NgbModule,
+        ReactiveFormsModule,
+        CommonModule,
+    ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
     {provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true},
