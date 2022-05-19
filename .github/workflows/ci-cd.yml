@@ -6,7 +6,7 @@ name: CI/CD
 
 on:
   push:
-    branches: [ main, macro-merge ]
+    branches: [ main, macro-merge, macro-merge-dev ]
   pull_request:
     branches: [ main ]
 
