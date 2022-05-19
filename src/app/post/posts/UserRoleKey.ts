@@ -1,6 +1,6 @@
 import {User} from '../../login-basic/user';
-import {Group} from '../../group-structure/group';
 import {HateoasResource, Resource} from '@lagoshny/ngx-hateoas-client';
+import {Group} from "../../group/group";
 
 @HateoasResource('userRoleKeys')
 export class UserRoleKey extends Resource {

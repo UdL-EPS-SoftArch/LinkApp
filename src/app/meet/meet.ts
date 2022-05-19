@@ -1,5 +1,5 @@
 import {HateoasResource, Resource} from '@lagoshny/ngx-hateoas-client';
-import {Group} from '../group-structure/group';
+import {Group} from "../group/group";
 
 @HateoasResource('meets')
 export class Meet extends Resource {

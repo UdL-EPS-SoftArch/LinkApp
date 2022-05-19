@@ -1,6 +1,6 @@
 import { HateoasResource, Resource } from '@lagoshny/ngx-hateoas-client';
 import {User} from '../../login-basic/user';
-import {Group} from '../../group-structure/group';
+import {Group} from "../../group/group";
 
 @HateoasResource('posts')
 export class Post extends Resource {

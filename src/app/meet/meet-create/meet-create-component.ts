@@ -4,7 +4,7 @@ import { AuthenticationBasicService } from '../../login-basic/authentication-bas
 import { Location } from '@angular/common';
 import {Meet} from '../meet';
 import {MeetService} from '../meet.service';
-import {GroupService} from "../../group-structure/group.service";
+import {GroupService} from "../../group/group.service";
 
 @Component({
   selector: 'app-user-register',

@@ -3,7 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {MeetService} from '../meet.service';
 import {Meet} from '../meet';
 import {catchError, switchMap} from 'rxjs/operators';
-import {Group} from '../../group-structure/group';
+import {Group} from '../../group/group';
 import {UserRoleService} from "../../role/userrole.service";
 import {AuthenticationBasicService} from "../../login-basic/authentication-basic.service";
 import {User} from "../../login-basic/user";

@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Group} from '../../group-structure/group';
+import {Group} from '../../group/group';
 import {Post} from '../posts/post';
 import {PostService} from '../posts/post.service';
 import {Router} from '@angular/router';

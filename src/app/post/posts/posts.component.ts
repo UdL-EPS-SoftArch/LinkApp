@@ -4,11 +4,11 @@ import {PostService} from './post.service';
 import {AuthenticationBasicService} from '../../login-basic/authentication-basic.service';
 import {User} from '../../login-basic/user';
 import {Post} from './post';
-import {Group} from '../../group-structure/group';
-import {GroupService} from '../../group-structure/group.service';
 import {PagedResourceCollection} from '@lagoshny/ngx-hateoas-client';
 import {UserRoleKey} from './UserRoleKey';
 import {UserRole} from './UserRole';
+import {Group} from "../../group/group";
+import {GroupService} from "../../group/group.service";
 
 
 @Component({

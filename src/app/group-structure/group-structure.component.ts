@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {GroupService} from './group.service';
 import {AuthenticationBasicService} from '../login-basic/authentication-basic.service';
 import {User} from '../login-basic/user';
-import {Group} from './group';
+import {Group} from "../group/group";
+import {GroupService} from "../group/group.service";
 
 
 @Component({
