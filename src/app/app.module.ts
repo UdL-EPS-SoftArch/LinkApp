@@ -37,6 +37,10 @@ import { MeetCardComponent } from './meet/meet-card/meet-card.component';
 import { MeetCardListComponent } from './meet/meet-card-list/meet-card-list.component';
 import { MeetDeleteComponent } from './meet/meet-detail/meet-delete/meet-delete.component';
 import {CommonModule} from "@angular/common";
+import {GroupStructureComponent} from './group-structure/group-structure.component';
+import {PostsComponent} from './post/posts/posts.component';
+import { PostCreateComponent } from './post/post-create/post-create.component';
+import { GroupMembersComponent } from './group-members/group-members.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +65,11 @@ import {CommonModule} from "@angular/common";
     UserSearchComponent,
     GroupListComponent,
     GroupItemComponent,
+    GroupSearchComponent,
+    GroupStructureComponent,
+    PostsComponent,
+    PostCreateComponent,
+    GroupMembersComponent,
     GroupSearchComponent,
     MeetCardComponent,
     MeetCardListComponent,

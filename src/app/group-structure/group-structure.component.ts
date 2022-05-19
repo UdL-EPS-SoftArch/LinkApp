@@ -15,6 +15,9 @@ export class GroupStructureComponent implements OnInit {
   public user: User = new User();
   public group: Group = new Group();
 
+  public showMeet = true;
+  public oppositeUrl: string;
+
   constructor(private route: ActivatedRoute,
               private groupService: GroupService,
               private authenticationService: AuthenticationBasicService
@@ -22,10 +25,21 @@ export class GroupStructureComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
+    this.isMeetList();
     this.groupService.getResource(id).subscribe(
       group => {
         this.group = group;
       });
+  }
+
+  isMeetList(): void {
+    const url = this.route.snapshot.url;
+    this.showMeet = 'meets' === url[url.length - 1].toString();
+    if (this.showMeet){
+      this.oppositeUrl = '/' + url[0] + '/' + url[1] + '/posts';
+    } else{
+      this.oppositeUrl = '/' + url[0] + '/' + url[1] + '/meets';
+    }
   }
 
 }

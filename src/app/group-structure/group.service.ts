@@ -11,15 +11,7 @@ export class GroupService extends HateoasResourceOperation<Group> {
   constructor() {
     super(Group);
   }
-
-  /*getGroupFromId(id: string) {
-    const group = new Group();
-    group.id = '122';
-    group.title = 'GEIADE';
-    group.description = 'setrdtfgyhukj';
-    return group;
-  }
-*/
+  /**/
   public findByTitleContaining(query: string): Observable<ResourceCollection<Group>> {
     return this.searchCollection('findByTitleContaining', { params: { text: query } });
   }

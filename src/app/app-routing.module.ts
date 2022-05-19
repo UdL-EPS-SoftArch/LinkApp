@@ -17,6 +17,8 @@ import { MeetDetailComponent } from './meet/meet-detail/meet-detail.component';
 import {GroupItemComponent} from "./group/group-item/group-item.component";
 import {MeetCardComponent} from "./meet/meet-card/meet-card.component";
 import {MeetCardListComponent} from "./meet/meet-card-list/meet-card-list.component";
+import {GroupStructureComponent} from './group-structure/group-structure.component';
+import {PostsComponent} from './post/posts/posts.component';
 
 
 const routes: Routes = [
@@ -34,6 +36,9 @@ const routes: Routes = [
   { path: 'groups/:id', component: GroupItemComponent},
   { path: 'about', component: AboutComponent},
   { path: '404', component: NotFoundComponent},
+  { path: 'group/:id/meets', component: GroupStructureComponent},
+  { path: 'group/:id/posts', component: GroupStructureComponent},
+  { path: 'posts', component: PostsComponent},
   { path: '', redirectTo: 'about', pathMatch: 'full'},
 ];
 

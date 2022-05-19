@@ -28,7 +28,7 @@ export class FeedComponent implements OnInit {
               private location: Location,
               private groupService: GroupService,
               private meetService: MeetService,
-              private authenticationBasicService: AuthenticationBasicService,) { }
+              private authenticationBasicService: AuthenticationBasicService) { }
 
   ngOnInit(): void {
     this.user = this.getCurrentUser();

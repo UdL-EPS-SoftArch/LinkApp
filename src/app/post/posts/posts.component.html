@@ -1,0 +1,15 @@
+
+<a *ngFor="let post of posts">
+
+  <div class="card">
+    <div class="card-body" [style.margin-left]="layerEm">
+        <h6 class="card-subtitle mb-2 text-muted"><i>{{post.author?.name }}</i></h6>
+        {{ post.text }}
+      <div style="margin-top: 1em">
+        <app-post-create [group]="group" [father]="post"></app-post-create>
+      </div>
+    </div>
+  </div>
+    <app-posts [group]="group" [father]="post" [layer]="layer + 2">
+    </app-posts>
+</a>
