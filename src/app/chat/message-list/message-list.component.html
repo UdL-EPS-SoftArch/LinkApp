@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row clearfix">
     <div class="col-lg-12">
-
+      <a class="card-text text-uppercase" [routerLink]="['/groups', meet.id]">Retorn al meet</a>
         <div class="chat">
           <div class="chat-header clearfix">
             <div class="row">
@@ -18,17 +18,22 @@
               <li class="clearfix"  *ngFor="let message of messages">
                 {{message.text}}
                 <div class="message other-message float-right" *ngIf="user.email===message.author.email">
-                  <p style="font-weight: bold;">{{message.author.email}}</p>
-                  {{message.text}}
-                  <br>
-                  <p style="float:right; font-size: 0.5em;">{{message.creationDate}}</p>
+                  <a id="button" class="card-text text-uppercase" [routerLink]="['/groups',message-detail(message)]">
+                    <p style="font-weight: bold;">{{message.author.email}}</p>
+                    {{message.text}}
+                    <br>
+                    <p style="float:right; font-size: 0.5em;">{{message.creationDate}}</p>
+                  </a>
                 </div>
                 <br *ngIf="user.email!==message.author.email">
                 <div class="message my-message" *ngIf="user.email!==message.author.email">
-                  <p style="font-weight: bold;">{{message.author.email}}</p>
-                  {{message.text}}
-                  <br>
-                  <p style="font-size: 0.5em;">{{message.creationDate}}</p>
+                  <a id="button2" class="card-text text-uppercase" [routerLink]="['/groups',message-detail(message)]">
+
+                    <p style="font-weight: bold;">{{message.author.email}}</p>
+                    {{message.text}}
+                    <br>
+                    <p style="font-size: 0.5em;">{{message.creationDate}}</p>
+                  </a>
                 </div>
               </li>
             </ul>
