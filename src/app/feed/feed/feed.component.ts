@@ -3,10 +3,10 @@ import { Router } from '@angular/router';
 import { AuthenticationBasicService } from '../../login-basic/authentication-basic.service';
 import { User } from '../../login-basic/user';
 import { Location } from '@angular/common';
-import { Group } from 'src/app/group-structure/group';
+import { Group } from 'src/app/group/group';
 import { Meet } from '../../meet/meet';
 import { PagedResourceCollection } from '@lagoshny/ngx-hateoas-client';
-import { GroupService } from 'src/app/group-structure/group.service';
+import { GroupService } from 'src/app/group/group.service';
 import { MeetService } from '../../meet/meet.service';
 
 @Component({

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Group} from '../Group';
+import {Group} from '../group';
 import {GroupService} from '../group.service';
 import {GROUPS} from '../../mock-groups';
 import {User} from '../../login-basic/user';

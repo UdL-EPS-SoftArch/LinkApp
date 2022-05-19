@@ -1,5 +1,3 @@
-import {Component, OnInit} from '@angular/core';
-import {Group} from '../Group';
 import {ActivatedRoute} from '@angular/router';
 import {AuthenticationBasicService} from '../../login-basic/authentication-basic.service';
 import {GroupService} from '../group.service';
@@ -8,6 +6,8 @@ import {UserRoleEnum} from '../../role/UserRoleEnum';
 import {UserRoleKey} from '../../role/RoleKey';
 import {UserRole} from '../../role/UserRole';
 import {UserRoleService} from "../../role/userrole.service";
+import { Component, OnInit, Input } from '@angular/core';
+import {Group} from '../group';
 
 @Component({
   selector: 'app-group-item',

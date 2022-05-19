@@ -41,6 +41,7 @@ import {GroupStructureComponent} from './group-structure/group-structure.compone
 import {PostsComponent} from './post/posts/posts.component';
 import { PostCreateComponent } from './post/post-create/post-create.component';
 import { GroupMembersComponent } from './group-members/group-members.component';
+import { CreateMessageComponent } from './chat/create-message/create-message.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,8 @@ import { GroupMembersComponent } from './group-members/group-members.component';
     UserSearchComponent,
     GroupListComponent,
     GroupItemComponent,
+    GroupSearchComponent,
+    CreateMessageComponent,
     GroupSearchComponent,
     GroupStructureComponent,
     PostsComponent,

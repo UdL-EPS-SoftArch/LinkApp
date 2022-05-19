@@ -12,6 +12,7 @@ import {GroupListComponent} from './group/group-list/group-list.component';
 import {GroupSearchComponent} from './group/group-search/group-search.component';
 import { FeedComponent } from './feed/feed/feed.component';
 import { MessageListComponent } from './chat/message-list/message-list.component';
+import { MessageDetailComponent } from './chat/message-detail/message-detail.component';
 import { MeetCreateComponent } from './meet/meet-create/meet-create-component';
 import { MeetDetailComponent } from './meet/meet-detail/meet-detail.component';
 import {GroupItemComponent} from "./group/group-item/group-item.component";
@@ -25,6 +26,8 @@ const routes: Routes = [
   { path: 'feed', component: FeedComponent},
   { path: 'groups/:id/meet-card-list', component: MeetCardListComponent},
   { path: 'meets/:id/message-list', component: MessageListComponent},
+  { path: 'meets/:id/message-list', component: MessageListComponent},
+  { path: 'meets/:id/message-list/:idMessage', component: MessageDetailComponent},
   { path: 'groups/:id/createMeet', component: MeetCreateComponent},
   { path: 'meets/:id', component: MeetDetailComponent},
   { path: 'users/create', component: UserRegisterComponent},
