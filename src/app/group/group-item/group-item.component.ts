@@ -5,7 +5,7 @@ import {User} from '../../login-basic/user';
 import {UserRoleEnum} from '../../role/UserRoleEnum';
 import {UserRoleKey} from '../../role/RoleKey';
 import {UserRole} from '../../role/UserRole';
-import {UserRoleService} from "../../role/userrole.service";
+import {UserRoleService} from '../../role/userrole.service';
 import { Component, OnInit, Input } from '@angular/core';
 import {Group} from '../group';
 
