@@ -24,7 +24,7 @@ Given(/^I go to the group creation page$/, () => {
   Then(/^The group created page information matches$/, (table: DataTable) => {
     table.rows().forEach(
       (pair: string[]) =>
-        cy.get('#' + pair[0] + '-repr')
+        cy.get('#' + pair[0] + '-group')
           .invoke('text')
           .should('contains', pair[1])
     );
