@@ -49,7 +49,7 @@ export class CreateMessageComponent implements OnInit {
         return this.message.meet.getRelation<Group>('group');
       }),
       // tslint:disable-next-line:no-shadowed-variable
-      switchMap(group => {
+      switchMap(( group : Group ) => {
         this.message.group = group;
         return this.messageService.createResource({body: this.message});
       }),
