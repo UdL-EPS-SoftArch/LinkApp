@@ -32,4 +32,63 @@ div {
   max-width: 50%;
 }
 
+.absolute {
+  position: absolute;
+}
 
+
+.yellow_image {
+  max-width: 75%;
+  left: 50%;
+  top: 5%;
+  transform: translateX(-50%);
+}
+
+.green_image {
+  top: 0;
+  right: 0;
+  left: unset;
+  transform: unset;
+}
+
+.red-image {
+  left: 2%;
+  top: 15%;
+}
+
+.btn-round {
+  box-sizing: border-box;
+  border-width: 2px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: .5rem 18px;
+  line-height: 1.75;
+  margin-right: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: #6c1461;
+  border-color: #6c1461;
+  color: #fff;
+  opacity: 1;
+  filter: alpha(opacity=100);
+  transition: all 150ms linear;
+  border-radius: 30px;
+}
+
+.btn.active, .btn:active, .btn:focus, .btn:hover, .show > .btn.dropdown-toggle {
+  background-color: #3c0c36;
+  color: #fff;
+  border-color:#3c0c36;
+}
+
+.relative {
+  position: relative;
+}
+
+.z-0 {
+  z-index: 0;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}

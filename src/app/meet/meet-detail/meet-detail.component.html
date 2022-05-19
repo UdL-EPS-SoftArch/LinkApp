@@ -1,4 +1,4 @@
-<app-meet-header [meet]="meet"></app-meet-header>
+<app-meet-header [meet]="meet" [group]="group"></app-meet-header>
 <div class="bg-gray">
   <div class="container">
     <div class="row py-2">
@@ -9,7 +9,7 @@
                alt="Main meetup image">
         </div>
         <h4 class="lato-black">Details</h4>
-        <p class="text-start" *ngFor="let paragraph of meet?.description.split('\n')">
+        <p id="description-repr" class="text-start" *ngFor="let paragraph of meet?.description.split('\n')">
           {{ paragraph }}
         </p>
       </div>
@@ -23,8 +23,8 @@
               </div>
               <div class="col-sm-10">
                 <div class="row">
-                  <p class="lato-black mb-0">Group name</p>
-                  <p class="text-black-50 mb-0">Public group</p>
+                  <p class="lato-black mb-0">{{group?.title}}</p>
+                  <p class="text-black-50 mb-0">{{groupIsPublic() ? "Public" : "Private"}} group</p>
                 </div>
               </div>
             </div>
@@ -53,8 +53,7 @@
             <div class="row mt-3">
               <div class="col-2"><p><i class="fas fa-map-marker-alt fa-lg"></i></p></div>
               <div class="col-md-10">
-                <p class="mb-1">JustDigital</p>
-                <p class="text-black-50 m-0">C/ Agustins, 7 (bajos) · Lleida</p>
+                <p id="location-repr" class="mb-1">{{meet?.location ? meet?.location : "Unknown"}}</p>
               </div>
             </div>
             <div class="row py-2">
@@ -65,6 +64,21 @@
               </div>
             </div>
           </div>
+
+
+          <div *ngIf="hasPermission" class="p-4 col-info mt-4">
+            <h5 class="mb-2 lato-black">Settings</h5>
+            <div class="row">
+              <div class="col">
+                <div class="row">
+                  <div class="col float-">
+                    <app-meet-delete [meet]="meet"></app-meet-delete>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
