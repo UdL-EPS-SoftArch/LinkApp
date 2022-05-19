@@ -7,9 +7,16 @@
 
   <div class="collapse navbar-collapse" id="navbarContent" [ngbCollapse]="isCollapsed">
     <ul class="navbar-nav">
-      <li class="nav-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
-        <a class="nav-link" [routerLink]="['/about']">About</a>
-      </li>
+      <div *ngIf="isRole('user'); else loggedOut">
+        <li class="nav-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
+          <a class="nav-link" [routerLink]="['/feed']">Feed</a>
+        </li>
+      </div>
+      <ng-template #loggedOut>
+        <li class="nav-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
+          <a class="nav-link" [routerLink]="['/about']">About</a>
+        </li>
+      </ng-template>
       <!--
       <li class="nav-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
         <a class="nav-link" [routerLink]="['/feed']">Feed</a>
