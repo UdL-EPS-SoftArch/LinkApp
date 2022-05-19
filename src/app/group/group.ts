@@ -7,6 +7,7 @@ export class Group extends Resource {
   title: string;
   description: string;
   visibility: string;
+  themes: string[];
 
   constructor(values: object = {}) {
     super();
