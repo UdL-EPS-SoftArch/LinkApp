@@ -24,7 +24,7 @@ import {PostsComponent} from './post/posts/posts.component';
 
 
 const routes: Routes = [
-  { path: 'feed', component: FeedComponent},
+  { path: 'feed', component: FeedComponent, canActivate: [LoggedInGuard]},
   { path: 'groups/:id/meet-card-list', component: MeetCardListComponent},
   { path: 'meets/:id/message-list', component: MessageListComponent},
   { path: 'meets/:id/message-list', component: MessageListComponent},
