@@ -13,7 +13,6 @@ Feature: Create Group
       | FIELD       | VALUE                |
       | title       | TestingGroup         |
       | description | Cucumber is working? |
-      | visibility  | PUBLIC               |
     And I click the "Submit" button
     Then It takes me to the group created page
     And The meet created page information matches

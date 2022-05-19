@@ -11,6 +11,7 @@ Given(/^I go to the group creation page$/, () => {
         .type(pair[1])
         .blur()
     );
+    cy.get('label').contains('PUBLIC').click();
   });
   
   Then(/^It takes me to the group created page$/, () => {
