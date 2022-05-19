@@ -10,6 +10,7 @@ import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { UserDeleteComponent } from './user/user-delete/user-delete.component';
 import {GroupListComponent} from './group/group-list/group-list.component';
 import {GroupSearchComponent} from './group/group-search/group-search.component';
+import { GroupCreateComponent } from './group/group-create/group-create.component';
 import { FeedComponent } from './feed/feed/feed.component';
 import { MessageListComponent } from './chat/message-list/message-list.component';
 import { MessageDetailComponent } from './chat/message-detail/message-detail.component';
@@ -35,6 +36,7 @@ const routes: Routes = [
   { path: 'users/:id/edit', component: UserEditComponent, canActivate: [LoggedInGuard]},
   { path: 'users/:id', component: UserDetailComponent, canActivate: [LoggedInGuard]},
   { path: 'users', component: UserListComponent, canActivate: [LoggedInGuard]},
+  { path: 'groups/create', component: GroupCreateComponent},
   { path: 'groups', component: GroupListComponent},
   { path: 'groups/:id', component: GroupItemComponent},
   { path: 'about', component: AboutComponent},
