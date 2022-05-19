@@ -10,19 +10,28 @@
       <li class="nav-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
         <a class="nav-link" [routerLink]="['/about']">About</a>
       </li>
+      <!--
       <li class="nav-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
         <a class="nav-link" [routerLink]="['/feed']">Feed</a>
       </li>
+      -->
       <li class="nav-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
         <a class="nav-link" [routerLink]="['/groups/1/createMeet']">Create Meet</a>
       </li>
-        <a class="nav-link" [routerLink]="['/meets/create']">Create Meet</a>
       <li class="nav-item" *ngIf="isRole('user')" ngbDropdown>
         <a class="nav-link dropdown-toggle" id="playerDropdown" role="button"
            aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>Users</a>
         <div class="dropdown-menu" aria-labelledby="playDropdown" ngbDropdownMenu>
           <a class="dropdown-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }"
              [routerLink]="['/users']"><span class="fas fa-user-circle"></span> List</a>
+        </div>
+      </li>
+      <li class="nav-item" *ngIf="isRole('user')" ngbDropdown>
+        <a class="nav-link dropdown-toggle" role="button"
+           aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>Groups</a>
+        <div class="dropdown-menu" aria-labelledby="playDropdown" ngbDropdownMenu>
+          <a class="dropdown-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }"
+             [routerLink]="['/groups']"><span class="fas fa-user-friends"></span> List</a>
         </div>
       </li>
     </ul>

@@ -33,6 +33,15 @@ import { MeetHeaderComponent } from './meet/meet-detail/meet-header/meet-header.
 import { GroupListComponent } from './group/group-list/group-list.component';
 import { GroupItemComponent } from './group/group-item/group-item.component';
 import { GroupSearchComponent } from './group/group-search/group-search.component';
+import { MeetCardComponent } from './meet/meet-card/meet-card.component';
+import { MeetCardListComponent } from './meet/meet-card-list/meet-card-list.component';
+import { MeetDeleteComponent } from './meet/meet-detail/meet-delete/meet-delete.component';
+import {CommonModule} from "@angular/common";
+import {GroupStructureComponent} from './group-structure/group-structure.component';
+import {PostsComponent} from './post/posts/posts.component';
+import { PostCreateComponent } from './post/post-create/post-create.component';
+import { GroupMembersComponent } from './group-members/group-members.component';
+import { CreateMessageComponent } from './chat/create-message/create-message.component';
 
 @NgModule({
   declarations: [
@@ -57,22 +66,33 @@ import { GroupSearchComponent } from './group/group-search/group-search.componen
     UserSearchComponent,
     GroupListComponent,
     GroupItemComponent,
-    GroupSearchComponent
+    GroupSearchComponent,
+    CreateMessageComponent,
+    GroupSearchComponent,
+    GroupStructureComponent,
+    PostsComponent,
+    PostCreateComponent,
+    GroupMembersComponent,
+    GroupSearchComponent,
+    MeetCardComponent,
+    MeetCardListComponent,
+    MeetDeleteComponent
   ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    AppRoutingModule,
-    HttpClientModule,
-    NgbCollapseModule,
-    NgbDropdownModule,
-    NgbPaginationModule,
-    NgxHateoasClientModule.forRoot(),
-    LoginBasicModule,
-    ErrorHandlerModule,
-    NgbModule,
-    ReactiveFormsModule,
-  ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        AppRoutingModule,
+        HttpClientModule,
+        NgbCollapseModule,
+        NgbDropdownModule,
+        NgbPaginationModule,
+        NgxHateoasClientModule.forRoot(),
+        LoginBasicModule,
+        ErrorHandlerModule,
+        NgbModule,
+        ReactiveFormsModule,
+        CommonModule,
+    ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
     {provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true},

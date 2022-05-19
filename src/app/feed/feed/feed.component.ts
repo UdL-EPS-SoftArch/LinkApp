@@ -3,10 +3,10 @@ import { Router } from '@angular/router';
 import { AuthenticationBasicService } from '../../login-basic/authentication-basic.service';
 import { User } from '../../login-basic/user';
 import { Location } from '@angular/common';
-import { Group } from 'src/app/group-structure/group';
+import { Group } from 'src/app/group/group';
 import { Meet } from '../../meet/meet';
 import { PagedResourceCollection } from '@lagoshny/ngx-hateoas-client';
-import { GroupService } from 'src/app/group-structure/group.service';
+import { GroupService } from 'src/app/group/group.service';
 import { MeetService } from '../../meet/meet.service';
 
 @Component({
@@ -18,7 +18,7 @@ export class FeedComponent implements OnInit {
   public user: User;
   public groups: Group[] = [];
   public meets: Meet[] = [];
-  public pageSize = 5;
+  public pageSize = 2;
   public page = 1;
   public totalGroups = 0;
   public totalMeets = 0;
@@ -28,7 +28,7 @@ export class FeedComponent implements OnInit {
               private location: Location,
               private groupService: GroupService,
               private meetService: MeetService,
-              private authenticationBasicService: AuthenticationBasicService,) { }
+              private authenticationBasicService: AuthenticationBasicService) { }
 
   ngOnInit(): void {
     this.user = this.getCurrentUser();

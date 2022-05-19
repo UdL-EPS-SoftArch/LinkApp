@@ -25,13 +25,34 @@
   </div>
 </div>
 
-<div style="text-align: center; margin-top: 1%; margin-bottom: 5px">
-  <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-    <label class="btn btn-outline-primary" for="btnradio1">Show Meets</label>
 
-    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-    <label class="btn btn-outline-primary" for="btnradio2">Show Posts</label>
+<a *ngIf="showMeet">
+  <div style="text-align: center; margin-top: 1%; margin-bottom: 5px">
+    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+      <input type="radio" class="btn-check" name="btnradio" id="btnradio01" autocomplete="off" checked>
+      <label class="btn btn-outline-primary" for="btnradio01">Show Meets</label>
+
+      <input type="radio" class="btn-check" name="btnradio" id="btnradio02" autocomplete="off">
+      <a class="btn btn-outline-primary" for="btnradio02" routerLink="{{oppositeUrl}}">Show Posts</a>
+    </div>
   </div>
-</div>
 
+  Ensenyant els meets!
+</a>
+
+
+<a *ngIf="!showMeet">
+  <div style="text-align: center; margin-top: 1%; margin-bottom: 5px">
+    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+      <input type="radio" class="btn-check" name="btnradio" id="btnradio11" autocomplete="off">
+      <label class="btn btn-outline-primary" for="btnradio11" routerLink="{{oppositeUrl}}">Show Meets</label>
+
+      <input type="radio" class="btn-check" name="btnradio" id="btnradio12" autocomplete="off" checked>
+      <a class="btn btn-outline-primary" for="btnradio12">Show Posts</a>
+    </div>
+  </div>
+  <br>
+  <app-post-create [group]="group" [father]="null"></app-post-create>
+  <app-posts [group]="group" [father]="null" [layer]="1">
+  </app-posts>
+</a>

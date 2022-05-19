@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable, of} from 'rxjs';
-import {Group} from './Group';
+import {Group} from './group';
 import {GROUPS} from '../mock-groups';
 import {HateoasResourceOperation, ResourceCollection} from '@lagoshny/ngx-hateoas-client';
 

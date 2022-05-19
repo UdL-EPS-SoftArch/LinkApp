@@ -42,7 +42,6 @@ nav.added-pad {
   margin-left: -15px;
 }
 
-
 .icon {
   margin:0 auto 40px
 }
@@ -98,4 +97,17 @@ img.small {
 *, :after, :before {
   box-sizing:border-box
 }
+
+.bottom-pad {
+  margin-bottom: 40px;
+}
+
+.top-pad {
+  padding-top: 12px;
+}
+
+.less-bottom-pad {
+  margin-bottom: 20px;
+}
+
 

@@ -2,7 +2,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Observable, of, OperatorFunction} from 'rxjs';
 import {catchError, debounceTime, distinctUntilChanged, map, switchMap, tap} from 'rxjs/operators';
 import {ResourceCollection} from '@lagoshny/ngx-hateoas-client';
-import {Group} from '../Group';
+import {Group} from '../group';
 import {GroupService} from '../group.service';
 
 @Component({

@@ -1,0 +1,12 @@
+<a *ngIf="father!==null">
+  <form class="input-group mb-3" (ngSubmit)="onSubmit()">
+      <input id="message" type="text" class="form-control" placeholder="Write your comment" aria-label="Write your comment" aria-describedby="button-addon2" #message="ngModel" [(ngModel)]="post.text" required>
+      <button class="form-group btn btn-outline-secondary" type="submit" id="submit2">Reply</button>
+  </form>
+</a>
+<a *ngIf="father===null">
+<form class="input-group mb-3" (ngSubmit)="onSubmit()">
+    <input id="message_init" name="message" type="text" class="form-control" placeholder="Write your post" aria-label="Write your post" aria-describedby="button-addon2" #message_init="ngModel" [(ngModel)]="post.text" required>
+    <button class="form-group btn btn-outline-secondary" type="submit" id="Submit">Post it</button>
+</form>
+</a>
