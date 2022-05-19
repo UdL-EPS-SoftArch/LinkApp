@@ -23,7 +23,7 @@
                     <p style="font-weight: bold;">{{message.author.email}}</p>
                     {{message.text}}
                     <br>
-                    <p style="float:right; font-size: 0.5em;">{{message.creationDate | date: 'shortTime' }}</p>
+                    <p style="float:right; font-size: 0.5em;">{{message.creationDate | date: 'medium' }}</p>
                   </div>
                 </a>
                 <br *ngIf="user.email!==message.author.email">
@@ -32,7 +32,7 @@
                     <p style="font-weight: bold;">{{message.author.email}}</p>
                     {{message.text}}
                     <br>
-                    <p style="font-size: 0.5em;">{{message.creationDate | date: 'shortTime' }}</p>
+                    <p style="font-size: 0.5em;">{{message.creationDate | date: 'medium' }}</p>
                   </div>
                 </a>
               </li>
