@@ -8,8 +8,8 @@
         <a class="card-text" [routerLink]="[group.uri]">{{group.title}}</a>
       </div>
       <div class="col-6 mt-1">
-        <h6 class="card-subtitle text-muted">Description</h6>
-        <p class="card-text justified-text">{{group.description}}</p>
+        <h6 class="card-subtitle text-muted">Themes</h6>
+        <p class="card-text justified-text">{{group.themes}}</p>
       </div>
     </div>
   </div>
@@ -18,4 +18,3 @@
 <ngb-pagination class="d-flex justify-content-center"
                 [(page)]="page" [pageSize]="pageSize" [collectionSize]="totalGroups"
                 (pageChange)="changePage()"></ngb-pagination>
-

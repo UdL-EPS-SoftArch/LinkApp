@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Meet} from '../../meet';
 import {MeetService} from '../../meet.service';
 import Swal from 'sweetalert2';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-meet-delete',
