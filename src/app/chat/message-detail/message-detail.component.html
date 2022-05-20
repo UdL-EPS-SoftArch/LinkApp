@@ -1,3 +1,6 @@
+<a class="card-text text-uppercase" [routerLink]="['../']">
+  <button type="button" class="btn btn-primary" style="margin-top: 2%; margin-left: 2%">RETURN TO CHAT</button>
+</a>
 <section class="h-100">
   <div class=" h-100 d-flex justify-content-center align-items-center">
     <div>
@@ -8,7 +11,7 @@
         <div class="card-body">
           <blockquote class="blockquote mb-0">
             <p>{{ message.text }}</p>
-            <footer class="blockquote-footer">Sent on: {{ message.creationDate }}</footer>
+            <footer class="blockquote-footer">Sent on: {{ message.creationDate | date: 'fullDate' }}</footer>
           </blockquote>
         </div>
       </div>

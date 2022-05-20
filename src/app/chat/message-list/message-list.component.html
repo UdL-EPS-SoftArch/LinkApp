@@ -3,7 +3,9 @@
 <div class="container">
   <div class="row clearfix">
     <div class="col-lg-12">
-
+        <a class="card-text text-uppercase" [routerLink]="['../']">
+          <button type="button" class="btn btn-primary" style="margin-top: 2%">RETURN TO THE {{meet.title}}</button>
+        </a>
         <div class="chat">
           <div class="chat-header clearfix">
             <div class="row">
@@ -16,20 +18,23 @@
           <div class="chat-history">
             <ul class="m-b-0">
               <li class="clearfix"  *ngFor="let message of messages">
-                {{message.text}}
-                <div class="message other-message float-right" *ngIf="user.email===message.author.email">
-                  <p style="font-weight: bold;">{{message.author.email}}</p>
-                  {{message.text}}
-                  <br>
-                  <p style="float:right; font-size: 0.5em;">{{message.creationDate}}</p>
-                </div>
+                <a id="button" class="card-text text-uppercase" [routerLink]="['./',message.uri.split('/').pop()]">
+                  <div class="message other-message float-right" *ngIf="user.email===message.author.email">
+                    <p style="font-weight: bold;">{{message.author.email}}</p>
+                    {{message.text}}
+                    <br>
+                    <p style="float:right; font-size: 0.5em;">{{message.creationDate | date: 'medium' }}</p>
+                  </div>
+                </a>
                 <br *ngIf="user.email!==message.author.email">
-                <div class="message my-message" *ngIf="user.email!==message.author.email">
-                  <p style="font-weight: bold;">{{message.author.email}}</p>
-                  {{message.text}}
-                  <br>
-                  <p style="font-size: 0.5em;">{{message.creationDate}}</p>
-                </div>
+                <a id="button2" class="card-text text-uppercase" [routerLink]="['./',message.uri.split('/').pop()]">
+                  <div class="message my-message" *ngIf="user.email!==message.author.email">
+                    <p style="font-weight: bold;">{{message.author.email}}</p>
+                    {{message.text}}
+                    <br>
+                    <p style="font-size: 0.5em;">{{message.creationDate | date: 'medium' }}</p>
+                  </div>
+                </a>
               </li>
             </ul>
           </div>
