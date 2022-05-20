@@ -9,7 +9,7 @@ Feature: Create Group
 
   Scenario: Create new group
     Given I go to the group creation page
-    When Fill the meet creation form with
+    When Fill the group creation form with
       | FIELD       | VALUE                |
       | title       | TestingGroup         |
       | description | Cucumber is working? |
