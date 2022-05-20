@@ -8,6 +8,6 @@ Given(/^I'm in the meet (\d+)$/, (meet:String) => {
 Then(/^It takes me to the meet (\d+) chat page$/, (meet:String) => {
   assert(
     cy.url()
-      .should('include', 'meets/' + meet + 'message-list/')
+      .should('include', 'meets/' + meet + '/message-list/')
   );
 });
