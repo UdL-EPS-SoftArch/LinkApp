@@ -8,13 +8,13 @@ Feature: Join Group
     When I click the "Register" menu
     And I fill the form with
       | FIELD    | VALUE         |
-      | name     | User          |
-      | username | user2          |
-      | email    | user@demo.app |
+      | name     | Test          |
+      | username | test          |
+      | email    | test@demo.app |
       | password | password      |
     Then I click the "Submit" button
     And I go to the homepage
-    And I log in as "user2" with password "password"
+    And I log in as "test" with password "password"
 
 
   Scenario: Join a group
