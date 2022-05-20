@@ -9,4 +9,5 @@ Feature: Join Group
 
   Scenario: Join a group
     Given I am in group-list page "1"
-    Then I click the "Join" button
+    When I click the "Join" button
+    Then Join button changes its value to "Joined"
