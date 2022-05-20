@@ -56,6 +56,13 @@
                 <p id="location-repr" class="mb-1">{{meet?.location ? meet?.location : "Unknown"}}</p>
               </div>
             </div>
+            <div class="row py-2">
+              <div class="col-md-7">
+                <a class="card-text text-uppercase" [routerLink]="['./message-list']">
+                  <button type="button" class="btn btn-primary">Chat</button>
+                </a>
+              </div>
+            </div>
           </div>
 
 
