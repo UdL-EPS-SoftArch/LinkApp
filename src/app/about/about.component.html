@@ -45,6 +45,13 @@
           <button _ngcontent-c4="" class="btn btn-round" type="button" *ngFor="let group of groups | slice:0:5; let i=index" [routerLink]="[group.uri]">{{group.title}}</button>
         </div>
       </div>
+      <p class="text-center less-bottom-pad"></p>
+      <h2 class="text-center">You can also take a look at some of our current meets:</h2>
+      <div _ngcontent-c4="" class="row top-pad">
+        <div _ngcontent-c4="" class="col-md-12 text-center">
+          <button _ngcontent-c4="" class="btn btn-round" type="button" *ngFor="let meet of meets | slice:0:5; let i=index" [routerLink]="['/meets/' + meet.id]">{{meet.title}}</button>
+        </div>
+      </div>
     </div>
   </div>
 
