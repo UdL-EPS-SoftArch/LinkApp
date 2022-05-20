@@ -3,8 +3,8 @@ import {Group} from '../group';
 import {GroupService} from '../group.service';
 import {GROUPS} from '../../mock-groups';
 import {User} from '../../login-basic/user';
-import {Router} from "@angular/router";
-import {PagedResourceCollection} from "@lagoshny/ngx-hateoas-client";
+import {Router} from '@angular/router';
+import {PagedResourceCollection} from '@lagoshny/ngx-hateoas-client';
 
 @Component({
   selector: 'app-group-list',

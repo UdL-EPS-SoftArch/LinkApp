@@ -27,8 +27,8 @@
 <br>
 
 <ngb-pagination class="d-flex justify-content-center"
-                [(page)]="page" [pageSize]="pageSize" [collectionSize]="totalMeets"
-                (pageChange)="changeGroupPage()"></ngb-pagination>
+                [(page)]="pageMeets" [pageSize]="pageSize" [collectionSize]="totalMeets"
+                (pageChange)="changeMeetPage()"></ngb-pagination>
 
 <br>
 <br>
@@ -57,7 +57,5 @@
 <br>
 
 <ngb-pagination class="d-flex justify-content-center"
-                [(page)]="page" [pageSize]="pageSize" [collectionSize]="totalGroups"
+                [(page)]="pageGroups" [pageSize]="pageSize" [collectionSize]="totalGroups"
                 (pageChange)="changeGroupPage()"></ngb-pagination>
-
-

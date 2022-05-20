@@ -18,8 +18,9 @@ export class FeedComponent implements OnInit {
   public user: User;
   public groups: Group[] = [];
   public meets: Meet[] = [];
-  public pageSize = 2;
-  public page = 1;
+  public pageSize = 5;
+  public pageMeets = 1;
+  public pageGroups = 1;
   public totalGroups = 0;
   public totalMeets = 0;
   public date = null;
@@ -34,26 +35,25 @@ export class FeedComponent implements OnInit {
     this.user = this.getCurrentUser();
     this.date = Date();
     this.groupService.getPage({ pageParams:  { size: this.pageSize }, sort: { title: 'ASC' } }).subscribe(
-      (page: PagedResourceCollection<Group>) => {
-        this.groups = page.resources;
-        this.totalGroups = page.totalElements;
+      (pageGroups: PagedResourceCollection<Group>) => {
+        this.groups = pageGroups.resources;
+        this.totalGroups = pageGroups.totalElements;
       });
     this.meetService.getPage({ pageParams:  { size: this.pageSize }, sort: { title: 'ASC' } }).subscribe(
-      (page: PagedResourceCollection<Meet>) => {
-        this.meets = page.resources;
-        this.totalMeets = page.totalElements;
+      (pageMeets: PagedResourceCollection<Meet>) => {
+        this.meets = pageMeets.resources;
+        this.totalMeets = pageMeets.totalElements;
       });
   }
 
-
   changeGroupPage(): void {
-    this.groupService.getPage({ pageParams: { page: this.page - 1, size: this.pageSize }, sort: { title: 'ASC' } }).subscribe(
-      (page: PagedResourceCollection<Group>) => this.groups = page.resources);
+    this.groupService.getPage({ pageParams: { page: this.pageGroups - 1, size: this.pageSize }, sort: { title: 'ASC' } }).subscribe(
+      (pageGroups: PagedResourceCollection<Group>) => this.groups = pageGroups.resources);
   }
 
   changeMeetPage(): void {
-    this.meetService.getPage({ pageParams: { page: this.page - 1, size: this.pageSize }, sort: { title: 'ASC' } }).subscribe(
-      (page: PagedResourceCollection<Meet>) => this.meets = page.resources);
+    this.meetService.getPage({ pageParams: { page: this.pageMeets - 1, size: this.pageSize }, sort: { title: 'ASC' } }).subscribe(
+      (pageMeets: PagedResourceCollection<Meet>) => this.meets = pageMeets.resources);
   }
 
   groupDetail(group: Group): void {

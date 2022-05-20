@@ -26,3 +26,4 @@ Feature: Create Message
       | FIELD    | VALUE         |
       | fill   | Mensaje 1     |
     And I click the "Submit" button
+    Then It takes me to the meet 9 chat page

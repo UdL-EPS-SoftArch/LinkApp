@@ -42,6 +42,7 @@ import {PostsComponent} from './post/posts/posts.component';
 import { PostCreateComponent } from './post/post-create/post-create.component';
 import { GroupMembersComponent } from './group-members/group-members.component';
 import { CreateMessageComponent } from './chat/create-message/create-message.component';
+import { GroupCreateComponent } from './group/group-create/group-create.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import { CreateMessageComponent } from './chat/create-message/create-message.com
     GroupSearchComponent,
     MeetCardComponent,
     MeetCardListComponent,
-    MeetDeleteComponent
+    MeetDeleteComponent,
+    GroupCreateComponent
   ],
     imports: [
         BrowserModule,

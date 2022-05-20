@@ -1,5 +1,5 @@
 import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps';
-import {DataTable} from "@cucumber/cucumber";
+import {DataTable} from '@cucumber/cucumber';
 
 Given(/^I go to the meet creation page of group (\d+)$/, (group:String) => {
   cy.visit('http://localhost:4200/groups/' + group + '/createMeet');
