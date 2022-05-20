@@ -6,6 +6,6 @@ Feature: See Group Details
     Given I'm in the homepage
 
   Scenario: See group details
-    Given I click the "Title group1" button
+    When I click the "Title group1" button
     Then I'm in the details page of the group with id "1"
 
