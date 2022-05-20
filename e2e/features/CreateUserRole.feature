@@ -13,6 +13,7 @@ Feature: Join Group
       | email    | user@demo.app |
       | password | password      |
     Then I click the "Submit" button
+    And I go to the homepage
     And I log in as "user2" with password "password"
 
 
